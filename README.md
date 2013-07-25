@@ -15,7 +15,7 @@ Tests
 Test for the different functions in the Phys Library. 
 To run the tests install:
 
-    "Mocha" - "npm install -g mocha", 
+    "Mocha" - "npm install -g mocha"
 
 Run "mocha" on the main directory.
 
