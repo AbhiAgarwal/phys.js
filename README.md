@@ -6,8 +6,19 @@ Phys is a Physics library built for Javascript & NodeJS. It's currently being de
 Information
 ====
 
+Phys is a library created for individuals who want to use the simple physics functions in their day to day work. This library includes:
+    - Mechanics
+    - Thermal Physics
+    - Oscillations and Wave Theory
+    - Electric Current and Electromagnetic Induction
+    - Fields, Forces and Motions in Fields
+    - Energy, power, and climate change
+    - Atomic and Nuclear Physics
+    - Quantum Physics
+
 Uses
 ====
+
 
 Tests
 ====
