@@ -7,6 +7,7 @@ Information
 ====
 
 Phys is a library created for individuals who want to use the simple physics functions in their day to day work. This library includes:
+
     - Mechanics
     - Thermal Physics
     - Oscillations and Wave Theory
