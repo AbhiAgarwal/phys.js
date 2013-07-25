@@ -34,19 +34,19 @@ describe('mechanics', function() {
   // mechanics.momentum
   // 2 parameters
   // Test 1: Multiplication of the two inputs
-  it('momentum should return back multiplication of the two positive inputs', function (){
+  it('Momentum Function - Test 1', function (){
     assert.equal(18, mechanics.momentum(9, 2));
     assert.equal(0, mechanics.momentum(0, 2));
   });
 
   // Test 2: Multiplication of two negative inputs
-  it('momentum should return back multiplication of the two negative inputs', function (){
+  it('Momentum Function - Test 2', function (){
     assert.equal(18, mechanics.momentum(-9, -2));
     assert.equal(2, mechanics.momentum(-1, -2));
   });  
 
   // Test 3: Multiplication of one negative and one non-negative inputs
-  it('momentum should return back multiplication of the one negative and one positive inputs', function (){
+  it('Momentum Function - Test 3', function (){
     assert.equal(-18, mechanics.momentum(-9, 2));
     assert.equal(-2, mechanics.momentum(-1, 2));
   });
@@ -54,13 +54,13 @@ describe('mechanics', function() {
   // mechanics.force
   // 1 parameter
   // Test 1: Multiplication of parameter by Gravitational Constant
-  it('force should return back multiplication of the positive number and the gravitational constant', function (){
+  it('Force Function - Test 1', function (){
     assert.equal(49.05, basic.twosig(mechanics.force(5)));
     assert.equal(88.29, basic.twosig(mechanics.force(9)));
   });
 
   // Test 2: Multiplication of a negative parameter by Gravitational Constant
-  it('force should return back multiplication of the negative number and the gravitational constant', function (){
+  it('Force Function - Test 2', function (){
     assert.equal(-49.05, basic.twosig(mechanics.force(-5)));
     assert.equal(-88.29, basic.twosig(mechanics.force(-9)));
   });
@@ -68,7 +68,7 @@ describe('mechanics', function() {
   // mechanics.cforce
   // 2 parameters
   // Test 1: Multiplication of two basic inputs
-  it('calculated force should return back multiplication of the two positive inputs', function (){
+  it('Calculated Force Function - Test 1', function (){
     assert.equal(45, basic.twosig(mechanics.cforce(5, 9)));
     assert.equal(81, basic.twosig(mechanics.cforce(9, 9)));
   });
@@ -76,7 +76,7 @@ describe('mechanics', function() {
   // mechanics.forceMomentum
   // 4 parameters
   // Test 1: Inputting 4 Basic Variables into the Equation
-  it('MomentumForce should return the difference of the first pair of positive numbers divided by the difference of the second pair of positive numbers', function (){
+  it('Force Momentum Function - Test 1', function (){
     assert.equal(1, basic.twosig(mechanics.forceMomentum(1, 2, 3, 4)));
     assert.equal(62, basic.twosig(mechanics.forceMomentum(959, 1021, 899, 900)));
   });
@@ -84,7 +84,7 @@ describe('mechanics', function() {
   // mechanics.cforceMomentum
   // 6 parameters
   // Test 1: Inputs 6 basic numbers into the Equation
-  it('CalculatedForceMomentum takes 6 positive inputs and follows - (Change in Momentum / Change in Time)', function (){
+  it('Calculated Force Momentum Function - Test 1', function (){
     assert.equal(10, basic.twosig(mechanics.cforceMomentum(1, 2, 3, 4, 5, 6)));
     assert.equal(280.70, basic.twosig(mechanics.cforceMomentum(291, 300, 400, 920, 1000, 2000)));
   });
@@ -142,7 +142,7 @@ describe('mechanics', function() {
   // mechanics.impulseMass
   // 3 parameters
   // Test 1: Inputs 3 basic numbers into the Equation
-  it('Impulse with Mass - Mass * Change in Velocity', function (){
+  it('Impulse with Mass Function - Test 1', function (){
   	assert.equal(100, basic.twosig(mechanics.impulseMass(10, 11, 21)));
     assert.equal(140097, basic.twosig(mechanics.impulseMass(201, 203, 900)));
   });
@@ -150,7 +150,7 @@ describe('mechanics', function() {
   // mechanics.impulseForce
   // 3 parameters
   // Test 1: Inputs 3 basic numbers into the Equation
-  it('Impuslse with Force - Force * Change in Time', function (){
+  it('Impuslse with Force Function - Test 1', function (){
   	assert.equal(1500, basic.twosig(mechanics.impulseForce(300, 0, 5)));
     assert.equal(15000, basic.twosig(mechanics.impulseForce(500, 0, 30)));
   });  
