@@ -13,8 +13,15 @@ Tests
 ====
 
 Test for the different functions in the Phys Library. 
+To run the tests install:
 
-To run the tests install "Mocha" - "npm install -g mocha", and run "mocha" on the main directory. It will automatically test the different functions.
+    "Mocha" - "npm install -g mocha", 
+
+Run "mocha" on the main directory.
+
+    Terminal: "mocha" 
+
+It will automatically test the different functions, and display the results on the Terminal.
 
 Core
 ====
