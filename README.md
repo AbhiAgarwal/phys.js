@@ -1,7 +1,7 @@
 phys.js
 ====
 
-Phys is a Physics library built for Javascript & NodeJS. It's currently being developed by Abhi Agarwal - (@AbhiAgarwal)[https://twitter.com/abhiagarwal]
+Phys is a Physics library built for Javascript & NodeJS. It's currently being developed by Abhi Agarwal - [@AbhiAgarwal](https://twitter.com/abhiagarwal)
 
 Information
 ====
