@@ -20,6 +20,13 @@ Phys is a library created for individuals who want to use simple or advanced phy
 Uses
 ====
 
+Phys is a module in node so it's pretty simple to integrate and start using. With node you're able to declare it as follows:
+
+    var phys = require('phys');
+
+Now for example, if you want to use the Mechanics library you're able to just call the functions with the input numbers:
+
+    phys.mechanics.forceMomentum(2, 3);
 
 Tests
 ====
