@@ -40,6 +40,3 @@ Run "mocha" on the main directory.
     Terminal: "mocha" 
 
 It will automatically test the different functions, and display the results on the Terminal.
-
-Core
-====
