@@ -1,0 +1,11 @@
+{  
+  "author": "Abhi Agarwal <me@abhiagarwal.com> (https://github.com/abhiagarwal)",
+  "name": "Phys",
+  "description": "Physics Library designed for NodeJS & Javascript",
+  "version": "0.0.1",
+  "homepage": "https://github.com/AbhiAgarwal/Phys",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/abhiagarwal/phys"
+  }
+}
