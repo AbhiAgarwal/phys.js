@@ -242,5 +242,4 @@ describe('mechanics', function() {
   	assert.equal(59.28, basic.twosig(mechanics.cCentripetalTime(0.5, 0.333)));
     assert.equal(74.20, basic.twosig(mechanics.cCentripetalTime(92.1, 49)));
   });  
-
 });
