@@ -1,7 +1,7 @@
 List of things to fix
 ===
 
-V1
+Version 0.0.1
 
 - Finish the following libraries with tests:
 
@@ -14,7 +14,7 @@ V1
     - Atomic and Nuclear Physics
     - Quantum Physics
 
-V1.1
+Version 0.0.2
 
 - Being able to rearrange the formulas, and equations,
     for example:
