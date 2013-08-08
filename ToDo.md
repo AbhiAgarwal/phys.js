@@ -5,7 +5,7 @@ V1
 
 - Finish the following libraries with tests:
 
-    - Mechanics
+    - ~~Mechanics~~
     - Thermal Physics
     - Oscillations and Wave Theory
     - Electric Current and Electromagnetic Induction
