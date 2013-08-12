@@ -6,7 +6,8 @@ Version 0.0.1
 - Finish the following libraries with tests:
 
     - ~~Mechanics~~
-    - Thermal Physics
+        - ~~SUVAT~~
+    - ~~Thermal Physics~~
     - Oscillations and Wave Theory
     - Electric Current and Electromagnetic Induction
     - Fields, Forces and Motions in Fields
@@ -25,3 +26,7 @@ Version 0.0.2
     for example:
 
         Copper as a solid has a specific heat capacity of 0.385
+
+Version 0.0.3 [Not so important updates, yet]
+
+- Make the functions & names easier to remember

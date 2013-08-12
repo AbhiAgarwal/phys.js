@@ -17,16 +17,30 @@ Phys is a library created for individuals who want to use simple or advanced phy
     - Atomic and Nuclear Physics
     - Quantum Physics
 
+The APIs will allow you to understand the usage of each function, while also being able to access each constant and each function defined in the library, and apply them in your work.
+
 Uses
 ====
 
-Phys is a module in node so it's pretty simple to integrate and start using. With node you're able to declare it as follows:
+Phys is a module in node so it's pretty simple to integrate and start using with your current application. With node you're able to install the library as follows:
+
+    npm install phys
+
+Then you're able to input it into your application directly using:
 
     var phys = require('phys');
 
 Now for example, if you want to use the Mechanics library you're able to just call the functions with the input numbers:
 
     phys.mechanics.forceMomentum(2, 3);
+
+If you're unsure of what the forceMomentum function does, you're able to use a tool built into the library that will allow you understand the function before using it:
+
+    phys.information.mechanics.forceMomentum();
+
+Calling this will give you access to information of the parameters, and inputs required for the specific function. This could be used in conjunction with the docs.
+
+This is to allow individuals to build applications that aren't just specific to calculations in Physics, but resources that would let other individuals understand Physics.
 
 Tests
 ====
