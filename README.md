@@ -38,7 +38,19 @@ If you're unsure of what the forceMomentum function does, you're able to use a t
 
     phys.information.mechanics.forceMomentum();
 
-Calling this will give you access to information of the parameters, and inputs required for the specific function. This could be used in conjunction with the docs.
+Calling this will give you access to information of the parameters, and inputs required for the specific function. (This could be used in conjunction with the docs.)
+
+The output would be in this format:
+
+    Name
+    Inputs
+    Equation
+
+For example:
+
+    The Force Equation - using Momentum
+    Inputs are: Initial Momentum, Final Momentum, Initial Time, Final Time.
+    Force = (Final Momentum - Initial Momentum) / (Final Time - Initial Time)
 
 This is to allow individuals to build applications that aren't just specific to calculations in Physics, but resources that would let other individuals understand Physics.
 

@@ -1,5 +1,5 @@
 /**
-* http.js
+* test.mechanics_suvat.js
 * http://github.com/abhiagarwal/phys.js
 *
 * Copyright 2013 Abhi Agarwal
@@ -17,14 +17,15 @@
 * limitations under the License.
 */
 
-// Testing the Applications of the Library with HTTP
-
-var http = require('http'),
-assert = require('assert'),
+var assert = require('assert'),
 phys = require('../index.js'),
-mechanics = phys.mechanics;
+suvat = phys.suvat,
+basic = phys.basic;
 
-http.createServer(function(req, res){
-	res.writeHead(200, {'Content-Type': 'text/plain'});
-  	res.end(String(mechanics.power(4, 3)));
-}).listen(8888);
+
+describe('suvat', function() {
+  console.log('Testing SUVAT Library');
+
+
+
+});
