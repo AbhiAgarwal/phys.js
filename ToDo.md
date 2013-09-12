@@ -5,9 +5,9 @@ Version 0.0.1
 
 - Finish the following libraries with tests:
 
-    - ~~Mechanics~~
-        - ~~SUVAT~~
-    - ~~Thermal Physics~~
+    - ~~Mechanics (24 Functions)~~
+        - ~~SUVAT (5 Functions)~~
+    - ~~Thermal Physics (9 Functions)~~
     - Oscillations and Wave Theory
     - Electric Current and Electromagnetic Induction
     - Fields, Forces and Motions in Fields
