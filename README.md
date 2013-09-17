@@ -66,3 +66,9 @@ Run "mocha" on the main directory.
     Terminal: "mocha" 
 
 It will automatically test the different functions, and display the results on the Terminal.
+
+Core Team
+====
+
+* Abhi Agarwal - [@abhiagarwal](http://twitter.com/abhiagarwal)
+* Philip Ottesen - [@pjo256](http://github.com/pjo256)

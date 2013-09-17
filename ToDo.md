@@ -30,5 +30,4 @@ Version 0.0.2
 Version 0.0.3 [Not so important updates, yet]
 
 - Make the functions & names easier to remember
-
 - Optimize "mechanics_suvat.js"
