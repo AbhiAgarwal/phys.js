@@ -32,7 +32,7 @@ Then you're able to input it into your application directly using:
 
 Now for example, if you want to use the Mechanics library you're able to just call the functions with the input numbers:
 
-    phys.mechanics.forceMomentum(2, 3);
+    phys.mechanics.forceMomentum(2, 3, 4, 5);
 
 If you're unsure of what the forceMomentum function does, you're able to use a tool built into the library that will allow you understand the function before using it:
 
