@@ -42,9 +42,9 @@ Calling this will give you access to information of the parameters, and inputs r
 
 The output would be in this format:
 
-    Name
-    Inputs
-    Equation
+    Name:
+    Inputs:
+    Equation:
 
 For example:
 
