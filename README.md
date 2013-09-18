@@ -52,6 +52,8 @@ For example:
     Inputs are: Initial Momentum, Final Momentum, Initial Time, Final Time.
     Force = (Final Momentum - Initial Momentum) / (Final Time - Initial Time)
 
+You'll know the inputs you've to put in very quickly, as well as what the equations are doing behind the scenes.
+
 This is to allow individuals to build applications that aren't just specific to calculations in Physics, but resources that would let other individuals understand Physics.
 
 Tests
