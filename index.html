@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Phys.js by AbhiAgarwal</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Phys.js</h1>
+        <p class="header">Physics Library designed for NodeJS &amp; Javascript</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/AbhiAgarwal/phys.js/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/AbhiAgarwal/phys.js/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/AbhiAgarwal/phys.js">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/AbhiAgarwal">AbhiAgarwal</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a name="physjs" class="anchor" href="#physjs"><span class="octicon octicon-link"></span></a>phys.js</h1>
+
+<p>Phys is a Physics library built for Javascript &amp; NodeJS. It's currently being developed by Abhi Agarwal - <a href="https://twitter.com/abhiagarwal">@AbhiAgarwal</a></p>
+
+<h1>
+<a name="information" class="anchor" href="#information"><span class="octicon octicon-link"></span></a>Information</h1>
+
+<p>Phys is a library created for individuals who want to use simple or advanced physics functions in their day-to-day work. This library includes functions for:</p>
+
+<pre><code>- Mechanics
+- Thermal Physics
+- Oscillations and Wave Theory
+- Electric Current and Electromagnetic Induction
+- Fields, Forces and Motions in Fields
+- Energy, power, and climate change
+- Atomic and Nuclear Physics
+- Quantum Physics
+</code></pre>
+
+<p>The APIs will allow you to understand the usage of each function, while also being able to access each constant and each function defined in the library, and apply them in your work.</p>
+
+<h1>
+<a name="uses" class="anchor" href="#uses"><span class="octicon octicon-link"></span></a>Uses</h1>
+
+<p>Phys is a module in node so it's pretty simple to integrate and start using with your current application. With node you're able to install the library as follows:</p>
+
+<pre><code>npm install phys
+</code></pre>
+
+<p>Then you're able to input it into your application directly using:</p>
+
+<pre><code>var phys = require('phys');
+</code></pre>
+
+<p>Now for example, if you want to use the Mechanics library you're able to just call the functions with the input numbers:</p>
+
+<pre><code>phys.mechanics.forceMomentum(2, 3, 4, 5);
+</code></pre>
+
+<p>If you're unsure of what the forceMomentum function does, you're able to use a tool built into the library that will allow you understand the function before using it:</p>
+
+<pre><code>phys.information.mechanics.forceMomentum();
+</code></pre>
+
+<p>Calling this will give you access to information of the parameters, and inputs required for the specific function. (This could be used in conjunction with the docs.)</p>
+
+<p>The output would be in this format:</p>
+
+<pre><code>Name:
+Inputs:
+Equation:
+</code></pre>
+
+<p>For example:</p>
+
+<pre><code>The Force Equation - using Momentum
+Inputs are: Initial Momentum, Final Momentum, Initial Time, Final Time.
+Force = (Final Momentum - Initial Momentum) / (Final Time - Initial Time)
+</code></pre>
+
+<p>You'll know the inputs you've to put in very quickly, as well as what the equations are doing behind the scenes.</p>
+
+<p>This is to allow individuals to build applications that aren't just specific to calculations in Physics, but resources that would let other individuals understand Physics.</p>
+
+<h1>
+<a name="tests" class="anchor" href="#tests"><span class="octicon octicon-link"></span></a>Tests</h1>
+
+<p>Test for the different functions in the Phys Library. To run the tests install:</p>
+
+<pre><code>"Mocha" - "npm install -g mocha"
+</code></pre>
+
+<p>Run "mocha" on the main directory.</p>
+
+<pre><code>Terminal: "mocha" 
+</code></pre>
+
+<p>It will automatically test the different functions, and display the results on the Terminal.</p>
+
+<h1>
+<a name="core-team" class="anchor" href="#core-team"><span class="octicon octicon-link"></span></a>Core Team</h1>
+
+<ul>
+<li>Abhi Agarwal - <a href="http://twitter.com/abhiagarwal">@abhiagarwal</a>
+</li>
+<li>Philip Ottesen - <a href="http://github.com/pjo256">@pjo256</a>
+</li>
+</ul>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
