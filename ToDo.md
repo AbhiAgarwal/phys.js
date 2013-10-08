@@ -14,6 +14,7 @@ Version 0.0.1
     - Energy, power, and climate change
     - Atomic and Nuclear Physics
     - Quantum Physics
+    - ~~Fix Information~~
 
 Version 0.0.2
 
