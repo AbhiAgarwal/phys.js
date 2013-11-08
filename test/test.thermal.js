@@ -96,7 +96,7 @@ describe('thermal', function() {
   // thermal.heatChange
   // 2 parameters
   // Test 1: Multiplication of the two inputs:
-  	it('Heat Relation Equation - Test 1', function(){
+  it('Heat Relation Equation - Test 1', function(){
     assert.equal(29.8, thermal.heatChange(9.8, 20));
     assert.equal(-50, thermal.heatChange(-30, -20));
     assert.equal(0, thermal.heatChange(0, 0, 0));
@@ -106,7 +106,7 @@ describe('thermal', function() {
   // 3 parameters
   // Test 1: Multiplication of the two inputs,
   // and the difference of parameters 2 and 3:
-  	it('Calculated Heat Relation Equation - Test 1', function(){
+  it('Calculated Heat Relation Equation - Test 1', function(){
     assert.equal(62.8, thermal.cHeatChange(19.2, 32, 50));
     assert.equal(11, thermal.cHeatChange(30, 91, -50));
     assert.equal(-40, thermal.cHeatChange(-30, -30, -40));
