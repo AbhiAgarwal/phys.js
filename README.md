@@ -51,6 +51,15 @@ You'll know the inputs you've to put in very quickly, as well as what the equati
 
 This is to allow individuals to build applications that aren't just specific to calculations in Physics, but resources that would let other individuals understand Physics.
 
+Build
+====
+
+To generate the Javascript file in /src/ run:
+
+    make build
+
+It will compile and generate the Javascript code in: /src/phys.js & the minified file in /src/phys.min.js.
+
 Tests
 ====
 
@@ -58,9 +67,9 @@ Test for the different functions in the Phys Library. To run the tests install M
 
     npm install -g mocha
 
-Run "mocha" on the main directory.
+Run "make test" on the main directory.
 
-    mocha
+    make test
 
 It will automatically test the different functions, and display the results on the Terminal.
 
