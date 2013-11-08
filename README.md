@@ -54,13 +54,13 @@ This is to allow individuals to build applications that aren't just specific to 
 Tests
 ====
 
-Test for the different functions in the Phys Library. To run the tests install:
+Test for the different functions in the Phys Library. To run the tests install Mocha:
 
-    "Mocha" - "npm install -g mocha"
+    npm install -g mocha
 
 Run "mocha" on the main directory.
 
-    Terminal: "mocha" 
+    mocha
 
 It will automatically test the different functions, and display the results on the Terminal.
 
