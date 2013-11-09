@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>basic.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="phys.html">
+                phys.js
+              </a>
+            
+              
+              <a class="source" href="basic.html">
+                basic.js
+              </a>
+            
+              
+              <a class="source" href="electromagnetic.html">
+                electromagnetic.js
+              </a>
+            
+              
+              <a class="source" href="fields.html">
+                fields.js
+              </a>
+            
+              
+              <a class="source" href="mechanics.html">
+                mechanics.js
+              </a>
+            
+              
+              <a class="source" href="mechanics_suvat.html">
+                mechanics_suvat.js
+              </a>
+            
+              
+              <a class="source" href="quantum.html">
+                quantum.js
+              </a>
+            
+              
+              <a class="source" href="thermal.html">
+                thermal.js
+              </a>
+            
+              
+              <a class="source" href="wave.html">
+                wave.js
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>basic.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/**
+ * basic.js
+ * http://github.com/abhiagarwal/phys.js
+ *
+ * Copyright 2013 Abhi Agarwal
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/</span>
+
+<span class="keyword">var</span> basic = exports;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Change in numbers</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Number1 (p1)
+@param {Number} Number2 (p2)
+@return {Number} Difference between Number1 &amp; Number2
+*/</span>
+
+basic.changein = <span class="function"><span class="keyword">function</span> <span class="params">(p1, p2, callback)</span> {</span>
+  <span class="keyword">var</span> ans = (p2 - p1);
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(ans);
+    <span class="keyword">return</span> (ans);
+  }
+  <span class="keyword">return</span> (ans);
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Two Decimal Figures</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Number (number)
+@return {Number} Converts the number to have 2 decimal places
+*/</span>
+
+basic.twosig = <span class="function"><span class="keyword">function</span> <span class="params">(number, callback)</span> {</span>
+  <span class="keyword">var</span> ans = (number.toFixed(<span class="number">2</span>));
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(ans);
+    <span class="keyword">return</span> (ans);
+  }
+  <span class="keyword">return</span> (ans);
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Radians To Degrees</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Number (number)
+@return {Number} Converts Radians to Degrees
+*/</span>
+
+basic.toDegrees = <span class="function"><span class="keyword">function</span><span class="params">(radians, callback)</span> {</span>
+  <span class="keyword">var</span> degrees = radians * (<span class="number">180</span>/Math.PI);
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(degrees);
+    <span class="keyword">return</span> (degrees);
+  }
+  <span class="keyword">return</span> degrees;
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Degrees to Radians</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Number (number)
+@return {Number} Converts degrees to Radians
+*/</span>
+
+basic.toRadians = <span class="function"><span class="keyword">function</span><span class="params">(degrees, callback)</span> {</span>
+  <span class="keyword">var</span> radians = degrees * (Math.PI / <span class="number">180</span>);
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(radians);
+    <span class="keyword">return</span> (radians);
+  }
+  <span class="keyword">return</span> radians;
+};</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
