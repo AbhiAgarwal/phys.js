@@ -120,17 +120,17 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>Energy of a quanta of light</p>
+              <p>Energy</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="comment">/* 
-@param {Number} Frequency (f)
-@return {Number} E = hf
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Mass
+@return {Number} E = m * c^2
 */</span>
 
-quantum.energy = <span class="function"><span class="keyword">function</span> <span class="params">(f)</span> {</span>
-  <span class="keyword">var</span> ans = constant.PlancksConstant * f;
+quantum.energy = <span class="function"><span class="keyword">function</span> <span class="params">(mass)</span> {</span>
+  <span class="keyword">var</span> ans = Math.pow(constant.SpeedofLightVacuum, <span class="number">2</span>) * mass;
   <span class="keyword">return</span> ans;
 };</pre></div></div>
             
@@ -142,6 +142,29 @@ quantum.energy = <span class="function"><span class="keyword">function</span> <s
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Energy of a quanta of light</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/* 
+@param {Number} Frequency (f)
+@return {Number} E = hf
+*/</span>
+
+quantum.energyLight = <span class="function"><span class="keyword">function</span> <span class="params">(f)</span> {</span>
+  <span class="keyword">var</span> ans = constant.PlancksConstant * f;
+  <span class="keyword">return</span> ans;
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
               <p>Momentum of quanta</p>
 
@@ -160,11 +183,11 @@ quantum.momentum = <span class="function"><span class="keyword">function</span> 
         </li>
         
         
-        <li id="section-4">
+        <li id="section-5">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-4">&#182;</a>
+                <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
               <p>De Broglie wavelength</p>
 
@@ -183,11 +206,11 @@ quantum.deBroglie = <span class="function"><span class="keyword">function</span>
         </li>
         
         
-        <li id="section-5">
+        <li id="section-6">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-5">&#182;</a>
+                <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
               <p>Lower-bound to uncertainty in position</p>
 
@@ -206,11 +229,11 @@ quantum.uncPosition = <span class="function"><span class="keyword">function</spa
         </li>
         
         
-        <li id="section-6">
+        <li id="section-7">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-6">&#182;</a>
+                <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
               <p>Lower-bound to uncertainty in momentum</p>
 
@@ -229,11 +252,11 @@ quantum.uncMomentum = <span class="function"><span class="keyword">function</spa
         </li>
         
         
-        <li id="section-7">
+        <li id="section-8">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-7">&#182;</a>
+                <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
               <p>Maximum kinetic energy of emitted electrons incident with a frequency f upon a metal with a work function W</p>
 
@@ -253,11 +276,11 @@ quantum.maxKineticEnergy = <span class="function"><span class="keyword">function
         </li>
         
         
-        <li id="section-8">
+        <li id="section-9">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-8">&#182;</a>
+                <a class="pilcrow" href="#section-9">&#182;</a>
               </div>
               <p>Minimum energy required to delocalize an electron from the surface of a metal</p>
 
@@ -276,11 +299,11 @@ quantum.minWork = <span class="function"><span class="keyword">function</span> <
         </li>
         
         
-        <li id="section-9">
+        <li id="section-10">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-9">&#182;</a>
+                <a class="pilcrow" href="#section-10">&#182;</a>
               </div>
               <p>Minimum frequency required to induce photoelectric effect</p>
 

@@ -327,7 +327,7 @@ thermal.cWork = <span class="function"><span class="keyword">function</span> <sp
             <div class="content"><div class='highlight'><pre><span class="comment">/*
 @param {Number} Work Done (w)
 @param {Number} Internal Energy Change (u)
-@return {Number} Q = U * W
+@return {Number} Q = U + W
 */</span>
 
 thermal.heatChange = <span class="function"><span class="keyword">function</span> <span class="params">(u, w, callback)</span> {</span>
@@ -356,7 +356,7 @@ thermal.heatChange = <span class="function"><span class="keyword">function</span
 @param {Number} Work Done (w)
 @param {Number} Initial Energy Change (u1)
 @param {Number} Final Energy Change (u2)
-@return {Number} Q = (Change in) U * W
+@return {Number} Q = (Change in) U + W
 */</span>
 
 thermal.cHeatChange = <span class="function"><span class="keyword">function</span> <span class="params">(u1, u2, w, callback)</span> {</span>
