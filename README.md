@@ -32,7 +32,7 @@ If you're unsure of what the forceMomentum function does, you're able to use a t
 
     phys.information.mechanics.forceMomentum();
 
-Calling this will give you access to information of the parameters, and inputs required for the specific function. (This could be used in conjunction with the docs.)
+Calling this will give you access to information of the parameters, and inputs required for the specific function. (This could be used in conjunction with the docs as well.)
 
 The output would be in this format:
 
@@ -46,12 +46,15 @@ For example:
     Inputs are: Initial Momentum, Final Momentum, Initial Time, Final Time.
     Force = (Final Momentum - Initial Momentum) / (Final Time - Initial Time)
 
-You'll know the inputs you've to put in very quickly, as well as what the equations are doing behind the scenes.
+You'll know the inputs you've to put in very quickly, as well as what the operations being performed behind the scenes.
 
 This is to allow individuals to build applications that aren't just specific to calculations in Physics, but resources that would let other individuals understand Physics.
 
-Build
-====
+###Build
+
+To get the dependencies for our project run:
+
+    npm install
 
 To generate the Javascript file in /src/ run:
 
@@ -59,21 +62,15 @@ To generate the Javascript file in /src/ run:
 
 It will compile and generate the Javascript code in: /src/phys.js & the minified file in /src/phys.min.js.
 
-Tests
-====
+###Tests
 
-Test for the different functions in the Phys Library. To run the tests install Mocha:
-
-    npm install -g mocha
-
-Run "make test" on the main directory.
+Test for the different functions in the Phys Library. To run the tests install Mocha, and then run:
 
     make test
 
-It will automatically test the different functions, and display the results on the Terminal.
+It will automatically test the different sections of the library, and display the results on the Terminal.
 
-Core Team
-====
+###Core Team
 
 * Abhi Agarwal - [@abhiagarwal](http://twitter.com/abhiagarwal)
 * Philip Ottesen - [@pjo256](http://github.com/pjo256)
