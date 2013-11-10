@@ -14,8 +14,7 @@ Phys is a library created for individuals who want to use simple or advanced phy
 
 The APIs will allow you to understand the usage of each function, while also being able to access each constant and each function defined in the library, and apply them in your work.
 
-Uses
-====
+###Uses
 
 Phys is a module in node so it's pretty simple to integrate and start using with your current application. With node you're able to install the library as follows:
 
