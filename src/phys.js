@@ -27,6 +27,10 @@ about.understand = function(){
 	);
 };
 },{}],2:[function(require,module,exports){
+
+},{}],3:[function(require,module,exports){
+module.exports=require(2)
+},{}],4:[function(require,module,exports){
 /**
 * mechanics.js
 * http://github.com/abhiagarwal/phys.js
@@ -394,72 +398,9 @@ mechanics.cCentripetalTime = function(){
 			"Centripetal Acceleration = (4 * Pi^2 * Radius) / (Time^2)"
 	);
 };
-},{}],3:[function(require,module,exports){
-/**
-* suvat.js
-* http://github.com/abhiagarwal/phys.js
-*
-* Copyright 2013 Abhi Agarwal
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-
-suvat = exports;
-
-/*
-* Creating an object for the SUVAT specification
-*/
-
-suvat.SUVAT = function(){
-	return ("SUVAT Equation\n" +
-			"S: Displacement (m)\n" +
-			"U: Initial Velocity (m/s)\n" +
-			"V: Final Velocity (m/s)\n" +
-			"A: Acceleration (m/s^2)\n" +
-			"T: Time (s)"
-	);
-};
-
-/*
-* Creating SUVAT function
-@param {Number} Displacement (s)
-@param {Number} Initial Velocity (u)
-@param {Number} Final Velocity (v)
-@param {Number} Acceleration (a)
-@param {Number} Time (t)
-@return {Nothing} Nothing
-*/
-
-suvat.create = function(){
-	return ("Initialize SUVAT Equation\n" +
-			"Inputs are: S: Displacement (m), U: Initial Velocity (m/s), V: Final Velocity (m/s), A: Acceleration (m/s^2), T: Time (s)\n" +
-			"Only 3 inputs of the above are required."
-	);
-};
-
-/*
-* SUVAT Solving Formuala
-@param {Nothing} Nothing
-@return {Number} Depending on the inputs on Create
-*/
-
-suvat.solve = function(){
-	return ("Solve SUVAT Equations\n" +
-			"Inputs are: None\n" +
-			"Returns Solved Equation Result"
-	);
-};
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
+module.exports=require(2)
+},{}],6:[function(require,module,exports){
 /**
 * thermal.js
 * http://github.com/abhiagarwal/phys.js
@@ -610,7 +551,9 @@ thermal.cHeatChange = function(){
 			"Heat = (Final Energy Change - Initial Energy Change) * Work Done"
 	);
 };
-},{}],5:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
+module.exports=require(2)
+},{}],8:[function(require,module,exports){
 /**
  * phys.js
  * http://github.com/abhiagarwal/phys.js
@@ -636,13 +579,15 @@ var phys = exports;
 phys.constants = require('./phys/constants/constants');
 phys.multiplier = require('./phys/constants/multiplier');
 phys.units = require('./phys/constants/units');
-phys.shc = require('./phys/constants/shc');
 
 // Information Library
 phys.information = require('./information/about');
 phys.information.mechanics = require('./information/mechanics');
-phys.information.suvat = require('./information/suvat');
 phys.information.thermal = require('./information/thermal');
+phys.information.wave = require('./information/wave');
+phys.information.fields = require('./information/fields');
+phys.information.electromagnetic = require('./information/electromagnetic');
+phys.information.quantum = require('./information/quantum');
 
 // Pure Formulas
 phys.basic = require('./phys/basic');
@@ -650,10 +595,9 @@ phys.mechanics = require('./phys/mechanics');
 phys.thermal = require('./phys/thermal');
 phys.wave = require('./phys/wave');
 phys.fields = require('./phys/fields');
-
-// Applied Formulas
-phys.suvat = require('./phys/mechanics_suvat');
-},{"./information/about":1,"./information/mechanics":2,"./information/suvat":3,"./information/thermal":4,"./phys/basic":6,"./phys/constants/constants":7,"./phys/constants/multiplier":8,"./phys/constants/shc":9,"./phys/constants/units":10,"./phys/fields":11,"./phys/mechanics":12,"./phys/mechanics_suvat":13,"./phys/thermal":14,"./phys/wave":15}],6:[function(require,module,exports){
+phys.electromagnetic = require('./phys/electromagnetic');
+phys.quantum = require('./phys/quantum');
+},{"./information/about":1,"./information/electromagnetic":2,"./information/fields":3,"./information/mechanics":4,"./information/quantum":5,"./information/thermal":6,"./information/wave":7,"./phys/basic":9,"./phys/constants/constants":10,"./phys/constants/multiplier":11,"./phys/constants/units":12,"./phys/electromagnetic":13,"./phys/fields":14,"./phys/mechanics":15,"./phys/quantum":16,"./phys/thermal":17,"./phys/wave":18}],9:[function(require,module,exports){
 /**
  * basic.js
  * http://github.com/abhiagarwal/phys.js
@@ -671,12 +615,12 @@ phys.suvat = require('./phys/mechanics_suvat');
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+*/
 
 var basic = exports;
 
+// Change in numbers
 /*
-* Change in numbers
 @param {Number} Number1 (p1)
 @param {Number} Number2 (p2)
 @return {Number} Difference between Number1 & Number2
@@ -691,8 +635,8 @@ basic.changein = function (p1, p2, callback) {
   return (ans);
 };
 
+// Two Decimal Figures
 /*
-* Two Decimal Figures
 @param {Number} Number (number)
 @return {Number} Converts the number to have 2 decimal places
 */
@@ -706,8 +650,8 @@ basic.twosig = function (number, callback) {
   return (ans);
 };
 
+// Radians To Degrees
 /*
-* Radians To Degrees
 @param {Number} Number (number)
 @return {Number} Converts Radians to Degrees
 */
@@ -721,8 +665,8 @@ basic.toDegrees = function(radians, callback) {
   return degrees;
 };
 
+// Degrees to Radians
 /*
-* Degrees to Radians
 @param {Number} Number (number)
 @return {Number} Converts degrees to Radians
 */
@@ -735,7 +679,7 @@ basic.toRadians = function(degrees, callback) {
   }
   return radians;
 };
-},{}],7:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 /**
 * constants.js
 * http://github.com/abhiagarwal/phys.js
@@ -903,7 +847,7 @@ constants.UnifiedAtomicMassKGUnit = "kg";
 */	
 constants.UnifiedAtomicMasseV = 931.5 * multiplier.M;
 constants.UnifiedAtomicMasseVUnit = "eVc^-2";
-},{"./multiplier":8}],8:[function(require,module,exports){
+},{"./multiplier":11}],11:[function(require,module,exports){
 /**
 * multiplier.js
 * http://github.com/abhiagarwal/phys.js
@@ -1018,30 +962,7 @@ multiplier.p = Math.pow(10, -12);
 */
 
 multiplier.f = Math.pow(10, -15);
-},{}],9:[function(require,module,exports){
-/**
-* shc.js
-* http://github.com/abhiagarwal/phys.js
-*
-* Copyright 2013 Abhi Agarwal
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-
-var shc = exports;
-
-
-},{}],10:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 /**
 * units.js
 * http://github.com/abhiagarwal/phys.js
@@ -1128,7 +1049,185 @@ units.atmPaUnit = "Pa";
 */
 units.atmHG = 760;
 units.atmHGUnit = "mmHg";
-},{"./multiplier":8}],11:[function(require,module,exports){
+},{"./multiplier":11}],13:[function(require,module,exports){
+/**
+ * electromagnetic.js
+ * http://github.com/abhiagarwal/phys.js
+ *
+ * Copyright 2013 Abhi Agarwal
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+var constant = require('./constants/constants');
+var units = require('./constants/units');
+var multiplier = require('./constants/multiplier');
+var basic = require('./basic');
+var electromagnetic = exports;
+
+// Rate at which charge flows through a given surface
+/*
+@param {Number} Charge (q1, q2)
+@param {Number} Time (t1, t2)
+@return {Number} current I = dQ / dt
+*/
+
+electromagnetic.current = function (q1, q2, t1, t2) {
+  var ans = basic.changein(q1, q2) / basic.changein(t1, t2);
+  return ans;
+};
+
+// Resistance of an Ohmic resistor
+/*
+@param {Number} Voltage (V)
+@param {Number} Current (I)
+@return {Number} Resistance R = V / I
+*/
+
+electromagnetic.ohmicResistance = function (V, I) {
+  var ans = V / I;
+  return ans;
+};
+
+// Resistivity - tendancy of a material to resist charge
+/* 
+@param {Number} Resistance (R)
+@param {Number} Cross-sectional area (A)
+@param {Number} Length (L)
+@return {Number} Resistivity res = R * A / L
+*/
+
+electromagnetic.resistivity = function (R, L, A) {
+  var ans = R * A / L;
+  return ans;
+};
+
+// Power - Energy consumed per unit time
+/*
+@param {Number} Voltage (V)
+@param {Number} Current (I)
+@return {Number} Power P = V * I
+*/
+
+electromagnetic.viPower = function (V, I) {
+  var ans = V * I;
+  return ans;
+};
+
+// Power - Energy consumed per unit time
+/*
+@param {Number} Current (I)
+@param {Number} Resistance (V)
+@return {Number} Power P = I ^ 2 * R
+*/
+
+electromagnetic.irPower = function (I, R) {
+  var ans = Math.pow(I, 2) * R;
+  return ans;
+};
+
+// Electromotive Force - Voltage generated by a battery
+/*
+@param {Number} Current (I)
+@param {Number} Resistance (R)
+@param {Number} Internal resistance of battery (r)
+@return {Number} emf = I(R + r)
+*/
+
+electromagnetic.emf = function (I, R, r) {
+  var ans = I * (R + r);
+  return ans;
+};
+
+// Sum of resistance components connected in series
+/*
+@param {Number} Array of resistance values (resistances)
+@return {Number} sumResistance = R_0 + R_1 + ... + R_(n - 1)
+*/
+
+electromagnetic.series = function (resistances) {
+  var sumResistance = 0;
+  for (var resistance in resistances) {
+  		sumResistance += resistance;
+  }
+  return sumResistance;
+};
+
+// Sum of resistance components connected in parallel
+/*
+@param {Number} Array of resistance values (resistances)
+@return {Number} sumResistance = R_0 + R_1 + ... + R_(n - 1)
+*/
+
+electromagnetic.parallel = function (resistances) {
+  var sumResistance = 0;
+  for (var resistance in resistances) {
+  		sumResistance += (1 / resistance);
+  }
+  return (1 / sumResistance);
+};
+
+// Component of B-field passing through a surface area A at an angle
+/*
+@param {Number} B-field Strength (B)
+@param {Number} Surface area of surface (A)
+@param {Number} Angle (in degrees) (theta)
+@return {Number} magFlux = B * A * cos(theta)
+*/
+
+electromagnetic.fluxComponent = function (B, A, theta) {
+  var magflux = B * A * Math.cos(basic.toRadians(theta));
+  return magFlux;
+};
+
+// Induced voltage by moving a rod of length l through a B-field of velocity v
+/*
+@param {Number} B-field Strength (B)
+@param {Number} Velocity of rod (v)
+@param {Number} Length (l)
+@return {Number} inducedEmf = B * v * l
+*/
+
+electromagnetic.inducedEmf = function (B, v, l) {
+  var indEmf = B * v * l;
+  return indEmf;
+};
+
+// Gauss' Law: Rate of flow of electric field (Electric flux) through a closed surface with an arbitrary volume
+/*
+@param {Number} Total charge enclosed within the surface (Q)
+@param {Number} Coulomb constant (k)
+@return {Number} guassFlux = Q / k 
+*/
+
+electromagnetic.gauss = function (Q) {
+  var gaussFlux = Q / constant.CoulombConstant;
+  return gaussFlux;
+}
+
+// Faraday's Law: Induced emf generated by moving coil in B-field
+/*
+@param {Number} Number of turns in coil (n)
+@param {Number} Rate of change of magnetic flux (magFlux1, magFlux 2)
+@param {Number} Time interval (t1, t2)
+@return {Number} coilEmf = - n * (magFlux2 - magFlux1) / (t2 - t1)
+*/
+
+electromagnetic.coilEmf = function (n, magFlux1, magFlux2, t1, t2) {
+  var ans = (-1 * n) * (basic.changein(magFlux1, magFlux2)) / (basic.changein(t1, t2));
+  return ans;
+}
+},{"./basic":9,"./constants/constants":10,"./constants/multiplier":11,"./constants/units":12}],14:[function(require,module,exports){
 /**
  * fields.js
  * http://github.com/abhiagarwal/phys.js
@@ -1154,8 +1253,8 @@ var multiplier = require('./constants/multiplier');
 var basic = require('./basic');
 var fields = exports;
 
+// Gravitational Force
 /*
-* Gravitational Force
 @param {Number} Gravitation (G) - Constant
 @param {Number} Mass One (mone)
 @param {Number} Mass Two (mtwo)
@@ -1172,8 +1271,8 @@ fields.gravitationalForce = function (mone, mtwo, r, callback) {
   return (ans);
 };
 
+// Calculated Gravitational Force
 /*
-* Calculated Gravitational Force
 @param {Number} Gravitation (G) - Constant
 @param {Number} Mass of First Object (mone)
 @param {Number} Mass of Second Object (mtwo)
@@ -1191,8 +1290,8 @@ fields.cGravitationalForce = function (mone, mtwo, r, callback) {
   return (ans);
 };
 
+// Coulomb's Law
 /*
-* Coulomb's Law
 @param {Number} Coulomb constant (k) - Constant
 @param {Number} Charge of First Object (qone)
 @param {Number} Charge of Second Object (qtwo)
@@ -1209,8 +1308,8 @@ fields.CoulombForce = function (qone, qtwo, r, callback) {
   return (ans);
 };
 
+// Calculated Coulomb's Law
 /*
-* Calculated Coulomb's Law
 @param {Number} Coulomb constant (k) - Constant
 @param {Number} Charge of First Object (qone)
 @param {Number} Charge of Second Object (qtwo)
@@ -1228,8 +1327,8 @@ fields.cCoulombForce = function (qone, qtwo, r, callback) {
   return (ans);
 };
 
+// Acceleration (Gravity)
 /*
-* Acceleration (Gravity)
 @param {Number} Force (F)
 @param {Number} mass (m)
 @return {Number} Acceleration = F / m
@@ -1244,8 +1343,8 @@ fields.gravitationalAcceleration = function (F, m, callback) {
   return (ans);
 };
 
+// Electric Field
 /*
-* Electric Field
 @param {Number} Force (F)
 @param {Number} Charge (q)
 @return {Number} Electric Field = F / q
@@ -1260,8 +1359,8 @@ fields.electricField = function (F, q, callback) {
   return (ans);
 };
 
+// Electric Field from change in Electric potential energy V with respect to position
 /*
-* Electric Field from change in Electric potential energy V with respect to position.
 @param {Number} Electric potential energy (v1, v2)
 @param {Number} Position (x1, x2)
 @return {Number} Electric Field Strength E = - (v2 - v1) / (x2 - x1)
@@ -1276,8 +1375,8 @@ fields.gradElectricField = function (v1, v2, x1, x2, callback) {
   return (ans);
 };
 
+// Gravitational Field from change in Gravitational potential energy V with respect to position
 /*
-* Gravitational Field from change in Gravitational potential energy V with respect to position.
 @param {Number} Gravitational potential energy (v1, v2)
 @param {Number} Position (x1, x2)
 @return {Number} Gravitational Field Strength g = - (u2 - u1) / (x2 - x1)
@@ -1292,8 +1391,8 @@ fields.gradGravField = function (u1, u2, x1, x2, callback) {
   return (ans);
 };
 
+// Magnetic force F exerted on a particle passing through B-field
 /*
-* Magnetic force F exerted on a particle passing through B-field
 @param {Number} Charge (q)
 @param {Number} Velocity (v)
 @param {Number} B-field strength (B)
@@ -1310,8 +1409,8 @@ fields.particleMagneticForce = function(q, v, B, theta, callback) {
   return (ans);
 }
 
+// Magnetic force F exerted on a current-carrying conductor in a B-field
 /*
-* Magnetic force F exerted on a current-carrying conductor in a B-field
 @param {Number} B-field strength (B)
 @param {Number} Current (I)
 @param {Number} Length (l)
@@ -1328,8 +1427,8 @@ fields.conductorMagneticForce = function(B, I, l, theta, callback) {
   return (ans);
 }
 
+// Gravitational potential energy of a particle m in a gravitatonal field formed by a body of mass M
 /*
-* Gravitational potential energy of a particle m in a gravitatonal field formed by a body of mass M 
 @param {Number} Particle mass (m)
 @param {Number} Source mass (M)
 @param {Number} Seperation from source mass (r)
@@ -1345,8 +1444,8 @@ fields.particleGravitationalPotentialEnergy = function(m, M, r, callback) {
   return (ans);
 }
 
+// Gravitational potential energy of an arbitrary pont in a gravitatonal field formed by a body of mass M
 /*
-* Gravitational potential energy of an arbitrary pont in a gravitatonal field formed by a body of mass M 
 @param {Number} Particle mass (m)
 @param {Number} Source mass (M)
 @param {Number} Seperation from source mass (r)
@@ -1362,8 +1461,8 @@ fields.gravitationalPotentialEnergy = function(M, r, callback) {
   return (ans);
 }
 
+// Velocity required for a body of to escape the orbit of a planet of mass M
 /*
-* Velocity required for a body of to escape the orbit of a planet of mass M
 @param {Number} Mass M of planet
 @param {Number} Radius r of planet
 @return {Number} v = sqrt(2G (M / r))
@@ -1378,8 +1477,8 @@ fields.escapeVelocity = function(M, r, callback) {
   return ans;
 }
 
+// Electric potential of a test charge q in an electric field formed by a charge Q at a distance r
 /*
-* Electric potential of a test charge q in an electric field formed by a charge Q at a distance r.
 @param {Number} Test charge (q)
 @param {Number} Source charge (Q)
 @param {Number} Separation (r)
@@ -1395,8 +1494,8 @@ fields.chargeElectricPotentialEnergy = function(Q, q, r, callback) {
   return ans;
 }
 
+// Electric potential of an arbitrary point in an electric field formed by a charge Q at a distance r
 /*
-* Electric potential of an arbitrary point in an electric field formed by a charge Q at a distance r.
 @param {Number} Test charge (q)
 @param {Number} Source charge (Q)
 @param {Number} Separation (r)
@@ -1411,7 +1510,7 @@ fields.electricPotentialEnergy = function(Q, r, callback) {
   }
   return ans;
 }
-},{"./basic":6,"./constants/constants":7,"./constants/multiplier":8,"./constants/units":10}],12:[function(require,module,exports){
+},{"./basic":9,"./constants/constants":10,"./constants/multiplier":11,"./constants/units":12}],15:[function(require,module,exports){
 /**
  * mechanics.js
  * http://github.com/abhiagarwal/phys.js
@@ -1437,8 +1536,8 @@ var multiplier = require('./constants/multiplier');
 var basic = require('./basic');
 var mechanics = exports;
 
+// Momentum
 /*
-* Momentum
 @param {Number} Mass (m)
 @param {Number} Velocity (v)
 @return {Number} Momentum = Mass * Velocity
@@ -1453,8 +1552,8 @@ mechanics.momentum = function (m, v, callback) {
   return (ans);
 };
 
+// Force
 /*
-* Force
 @param {Number} Mass (m)
 @return {Number} Force = Mass * Acceleration
 */
@@ -1468,8 +1567,8 @@ mechanics.force = function (m, callback) {
   return (ans);
 };
 
+// Calculated Force (Own Acceleration Input)
 /*
-* Calculated Force (Own Acceleration Input)
 @param {Number} Mass (m)
 @param {Number} Acceleration (g)
 @return {Number} Force = Mass * Acceleration
@@ -1484,8 +1583,8 @@ mechanics.cForce = function (m, g, callback) {
   return (ans);
 };
 
+// Force (Momentum over Time)
 /*
-* Force (Momentum over Time)
 @param {Number} Change in Momentum (p1, p2)
 @param {Number} Change in Time (t1, t2)
 @return {Number} Force = Change in Momentum / Change in Time
@@ -1500,8 +1599,8 @@ mechanics.forceMomentum = function (p1, p2, t1, t2, callback) {
   return (ans);
 };
 
+// Calculated Force (Momentum over Time)
 /*
-* Calculated Force (Momentum over Time)
 @param {Number} Change in Momentum (m1, v1, m2, v2)
 @param {Number} Change in Time (t1, t2)
 @return {Number} Force = ((m2 * v2) - (m1 * v1)) / (t2 - t1)
@@ -1517,8 +1616,8 @@ mechanics.cForceMomentum = function (m1, v1, m2, v2, t1, t2, callback) {
   return (ans);
 };
 
+// SUVAT Displacement (Using u, t, a)
 /*
-* SUVAT Displacement (Using u, t, a)
 @param {Number} Initial Velocity (u)
 @param {Number} Time (t)
 @param {Number} Acceleration (a)
@@ -1534,12 +1633,12 @@ mechanics.SUVATuta = function (u, t, a, callback) {
   return (ans);
 };
 
+// SUVAT Displacement (using u, v, t)
 /*
-* SUVAT Displacement (using u, v, t)
 @param {Number} Initial Velocity (u)
 @param {Number} Final Velocity (v)
 @param {Number} Time (t)
-@return {Number}  s = 1 / 2 * (u + v) * t
+@return {Number}  s = (1 / 2 * (u + v)) * t
 */
 
 mechanics.SUVATuvt = function (u, v, t, callback) {
@@ -1551,8 +1650,8 @@ mechanics.SUVATuvt = function (u, v, t, callback) {
   return (ans);
 };
 
+// SUVAT Displacement (using a, v, t)
 /*
-* SUVAT Displacement (using a, v, t)
 @param {Number} Acceleration (a)
 @param {Number} Final Velocity (v)
 @param {Number} Time (t)
@@ -1568,8 +1667,8 @@ mechanics.SUVATvta = function (v, t, a, callback) {
   return (ans);
 };
 
+// SUVAT Displacement (using u, a, t)
 /*
-* SUVAT Displacement (using u, a, t)
 @param {Number} Initial Velocity (u)
 @param {Number} Acceleration (a)
 @param {Number} Time (t)
@@ -1585,8 +1684,8 @@ mechanics.SUVATuat = function (u, a, t, callback) {
   return (ans);
 };
 
+// SUVAT Displacement (using u, a, s)
 /*
-* SUVAT Displacement (using u, a, s)
 @param {Number} Initial Velocity (u)
 @param {Number} Acceleration (a)
 @param {Number} Dispalcement (s)
@@ -1602,8 +1701,8 @@ mechanics.SUVATuas = function (u, a, s, callback) {
   return (ans);
 };
 
+// Calculated SUVAT Displacement (using u, a, s)
 /*
-* Calculated SUVAT Displacement (using u, a, s)
 @param {Number} Initial Velocity (u)
 @param {Number} Acceleration (a)
 @param {Number} Dispalcement (s)
@@ -1619,8 +1718,8 @@ mechanics.cSUVATuas = function (u, a, s, callback) {
   return (ans);
 };
 
+// Impulse w/ Mass & Velocity
 /*
-* Impulse w/ Mass & Velocity
 @param {Number} Mass (m)
 @param {Number} Initial Velocity (v1)
 @param {Number} Finaly Velocity (v2)
@@ -1636,8 +1735,8 @@ mechanics.impulseMass = function (m, v1, v2, callback) {
   return (ans);
 };
 
+// Impulse w/ Force & Times
 /*
-* Impulse w/ Force & Times
 @param {Number} Force (f)
 @param {Number} Initial Time (t1)
 @param {Number} Final Time (t2)
@@ -1653,8 +1752,8 @@ mechanics.impulseForce = function (f, t1, t2, callback) {
   return (ans);
 };
 
+// Work
 /*
-* Work
 @param {Number} Force (f)
 @param {Number} Displacement (s)
 @param {Number} Cos(Thetha) (angle - Cosine of an angle theta)
@@ -1670,8 +1769,8 @@ mechanics.workDone = function (f, s, angle, callback) {
   return (ans);
 };
 
+// Kinetic Energy w/ Velocity
 /*
-* Kinetic Energy w/ Velocity
 @param {Number} Velocity (v)
 @param {Number} Mass (m)
 @return {Number} Kinetic Energy = 1/2 * m * v^2
@@ -1686,8 +1785,8 @@ mechanics.kineticVelocity = function (v, m, callback) {
   return (ans);
 };
 
+// Kinetic Energy w/ Momentum
 /*
-* Kinetic Energy w/ Momentum
 @param {Number} Momentum (p)
 @param {Number} Mass (m)
 @return {Number} Kinetic Energy = (p^2) / (2 * m)
@@ -1702,8 +1801,8 @@ mechanics.kineticMomentum = function (p, m, callback) {
   return (ans);
 };
 
+// Calculated Kinetic Energy Momentum
 /*
-* Calculated Kinetic Energy Momentum
 @param {Number} Velocity (v)
 @param {Number} Mass (m)
 @return {Number} Kinetic Energy = ((m * v)^2) / (2 * m)
@@ -1718,8 +1817,8 @@ mechanics.cKineticMomentum = function (v, m, callback) {
   return (ans);
 };
 
+// Potential Energy
 /*
-* Potential Energy
 @param {Number} Mass (m)
 @param {Number} Initial Height (h1)
 @param {Number} Final Height (h2)
@@ -1736,8 +1835,8 @@ mechanics.potential = function (m, h1, h2, callback) {
   return (ans);
 };
 
+// Calculated Potential Energy (Entering own g)
 /*
-* Calculated Potential Energy (Entering own g)
 @param {Number} Mass (m)
 @param {Number} Gravitational Field Strength (g)
 @param {Number} Initial Height (h1)
@@ -1754,8 +1853,8 @@ mechanics.cPotential = function (m, g, h1, h2, callback) {
   return (ans);
 };
 
+// Power
 /*
-* Power
 @param {Number} Force (f)
 @param {Number} Velocity (v)
 @return {Number} Power = Force * Velocity
@@ -1770,8 +1869,8 @@ mechanics.power = function (f, v, callback) {
   return (ans);
 };
 
+// Centripetal Acceleration w/ Velocity
 /*
-* Centripetal Acceleration w/ Velocity
 @param {Number} Velocity (v)
 @param {Number} r (radius)
 @return {Number} Acceleration = Velocity^2 / Radius
@@ -1786,8 +1885,8 @@ mechanics.centripetalVelocity = function (v, r, callback) {
   return (ans);
 };
 
+// Centripetal Acceleration w/ Velocity (Entering v^2)
 /*
-* Centripetal Acceleration w/ Velocity (Entering v^2)
 @param {Number} Velocity (v)
 @param {Number} r (radius)
 @return {Number} Acceleration = Velocity^2 / Radius
@@ -1802,8 +1901,8 @@ mechanics.cCentripetalVelocity = function (v, r, callback) {
   return (ans);
 };
 
+// Centripetal Acceleration w/ Time
 /*
-* Centripetal Acceleration w/ Time
 @param {Number} Radius (r)
 @param {Number} Time (t)
 @return {Number} Acceleration = 4 * Pi^2 * r / (t^2)
@@ -1818,8 +1917,8 @@ mechanics.centripetalTime = function (r, t, callback) {
   return (ans);
 };
 
+// Calculated Centripetal Acceleration w/ Time (Self calculating t^2)
 /*
-* Calculated Centripetal Acceleration w/ Time (Self calculating t^2)
 @param {Number} Radius (r)
 @param {Number} Time (t)
 @return {Number} Acceleration = 4 * Pi^2 * r / (t^2)
@@ -1833,9 +1932,9 @@ mechanics.cCentripetalTime = function (r, t, callback) {
   }
   return (ans);
 };
-},{"./basic":6,"./constants/constants":7,"./constants/multiplier":8,"./constants/units":10}],13:[function(require,module,exports){
+},{"./basic":9,"./constants/constants":10,"./constants/multiplier":11,"./constants/units":12}],16:[function(require,module,exports){
 /**
- * mechanics_suvat.js
+ * quantum.js
  * http://github.com/abhiagarwal/phys.js
  *
  * Copyright 2013 Abhi Agarwal
@@ -1857,100 +1956,108 @@ var constant = require('./constants/constants');
 var units = require('./constants/units');
 var multiplier = require('./constants/multiplier');
 var basic = require('./basic');
-var mechanics = require('./mechanics');
-var suvat = exports;
+var quantum = exports;
 
+// Energy
 /*
- * Creating an object for the SUVAT specification
- */
-
-var equation = {
-  s: null,
-  u: null,
-  v: null,
-  a: null,
-  t: null
-};
-
-/*
-* Creating SUVAT function
-@param {Number} Displacement (s)
-@param {Number} Initial Velocity (u)
-@param {Number} Final Velocity (v)
-@param {Number} Acceleration (a)
-@param {Number} Time (t)
-@return {Nothing} Nothing
+@param {Number} Mass
+@return {Number} E = m * c^2
 */
 
-suvat.create = function (s, u, v, a, t) {
-  if (s != null) {
-    equation.s = s;
-  }
-  if (u != null) {
-    equation.u = u;
-  }
-  if (v != null) {
-    equation.v = v;
-  }
-  if (a != null) {
-    equation.a = a;
-  }
-  if (t != null) {
-    equation.t = t;
-  }
+quantum.energy = function (mass) {
+  var ans = Math.pow(constant.SpeedofLightVacuum, 2) * mass;
+  return ans;
 };
 
-/*
-* SUVAT Solving Formuala
-@return {Number} Depending on the inputs on Create
+// Energy of a quanta of light
+/* 
+@param {Number} Frequency (f)
+@return {Number} E = hf
 */
 
-suvat.solve = function () {
-  // If the user didn't initialize the .create() function
-  if ((equation.s == null) && (equation.u == null) && (equation.v ==
-    null) && (equation.a == null) && (equation.t == null)) {
-    console.log(
-      "Library hasn't been initialized - use suvat.create(...)");
-    return null;
-  }
-  // SUVATuta, finding u, t, a
-  // returns displacement
-  else if ((equation.u != null) && (equation.t != null) && (equation.a !=
-    null)) {
-    return (mechanics.SUVATuta(equation.u, equation.t, equation.a));
-  }
-  // SUVATuvt, finding u, v, t
-  // returns displacement
-  else if ((equation.u != null) && (equation.v != null) && (equation.t !=
-    null)) {
-    return (mechanics.SUVATuvt(equation.u, equation.v, equation.t));
-  }
-  // SUVATvta, finding v, t, a
-  // returns displacement
-  else if ((equation.v != null) && (equation.t != null) && (equation.a !=
-    null)) {
-    return (mechanics.SUVATvta(equation.v, equation.t, equation.a));
-  }
-  // SUVATuat, finding u, a, t
-  // returns velocity
-  else if ((equation.u != null) && (equation.a != null) && (equation.t !=
-    null)) {
-    return (mechanics.SUVATuat(equation.u, equation.a, equation.t));
-  }
-  // SUVATuas, finding u, a, s
-  // returns velocity^2, not velocity
-  else if ((equation.u != null) && (equation.a != null) && (equation.s !=
-    null)) {
-    return (mechanics.SUVATuas(equation.u, equation.a, equation.s));
-  }
-  // Inputs don't match, ie: 
-  // 2 inputs or 1 input
-  else {
-    console.log("Inputs don't match the required specifications");
-    return null;
-  }
+quantum.energyLight = function (f) {
+  var ans = constant.PlancksConstant * f;
+  return ans;
 };
-},{"./basic":6,"./constants/constants":7,"./constants/multiplier":8,"./constants/units":10,"./mechanics":12}],14:[function(require,module,exports){
+
+// Momentum of quanta
+/*
+@param {Number} Wavelength (waveLen)
+@return {Number} p = h / waveLen
+*/
+
+quantum.momentum = function (waveLen) {
+  var ans = constant.PlancksConstant / waveLen;
+  return ans;
+};
+
+// De Broglie wavelength
+/*
+@param {Number} Momentum (p)
+@return {Number} waveLen = h / p
+*/
+
+quantum.deBroglie = function (p) {
+  var ans = constant.PlancksConstant / p;
+  return ans;
+};
+
+// Lower-bound to uncertainty in position
+/*
+@param {Number} Uncertainty in momentum (dMomentum)
+@return {Number} dPosition >= (h / 4pi) * (1 / dMomentum)
+*/
+
+quantum.uncPosition = function (dMomentum) {
+  var ans = constant.PlancksConstant / (4 * Math.PI * dMomentum);
+  return ans;
+};
+
+// Lower-bound to uncertainty in momentum
+/*
+@param {Number} Uncertainty in position (dPosition)
+@return {Number} dMomentum >= (h / 4pi) * (1 / dPosition)
+*/
+
+quantum.uncMomentum = function (dPosition) {
+  var ans = constant.PlancksConstant / (4 * Math.PI * dPosition);
+  return ans;
+};
+
+// Maximum kinetic energy of emitted electrons incident with a frequency f upon a metal with a work function W
+/*
+@param {Number} Work function (in Joules) (W)
+@param {Number} Frequency (f)
+@return {Number} K = hf - W
+*/
+
+quantum.maxKineticEnergy = function (W, f) {
+  var ans = constant.PlancksConstant * f - W;
+  return ans;
+};
+
+// Minimum energy required to delocalize an electron from the surface of a metal
+/*
+@param {Number} Threshold frequency (f0)
+@return {Number} W = hf_0
+*/
+
+quantum.minWork = function (f0) {
+  var ans = constant.PlancksConstant * f0;
+  return ans;
+};
+
+// Minimum frequency required to induce photoelectric effect
+/*
+@param {Number} W
+@return {Number} f_0 = W / h;
+*/
+
+quantum.thresholdFreq = function (W) {
+  var ans = W / constant.PlancksConstant;
+  return ans;
+};
+},{"./basic":9,"./constants/constants":10,"./constants/multiplier":11,"./constants/units":12}],17:[function(require,module,exports){
 /**
  * thermal.js
  * http://github.com/abhiagarwal/phys.js
@@ -1976,8 +2083,8 @@ var multiplier = require('./constants/multiplier');
 var basic = require('./basic');
 var thermal = exports;
 
+// Pressure
 /*
-* Pressure
 @param {Number} Force (f)
 @param {Number} Area (a)
 @return {Number} Pressure = Force / Area
@@ -1992,8 +2099,8 @@ thermal.pressure = function (f, a, callback) {
   return (ans);
 };
 
+// Heat
 /*
-* Heat
 @param {Number} Mass (m)
 @param {Number} Specific Heat Capacity (shc)
 @param {Number} Change in Temperature (t)
@@ -2009,8 +2116,8 @@ thermal.heat = function (m, shc, t, callback) {
   return (ans);
 };
 
+// Calculated Heat
 /*
-* Calculated Heat
 @param {Number} Mass (m)
 @param {Number} Specific Heat Capacity (shc)
 @param {Number} Temperature One (t1)
@@ -2027,8 +2134,8 @@ thermal.cHeat = function (m, shc, t1, t2, callback) {
   return (ans);
 };
 
+// Latent Heat of Vaporization or Fusion
 /*
-* Latent Heat of Vaporization or Fusion
 @param {Number} Mass (m)
 @param {Number} V or F (Vaporization or Fusion) (l)
 @return {Number} Q = Mass * Latent Heat of Fusion or Vaporization
@@ -2043,8 +2150,8 @@ thermal.latentHeat = function (m, l, callback) {
   return (ans);
 };
 
+// The Ideal Gas Equation
 /*
-* The Ideal Gas Equation
 @param {Number} Number of moles (n)
 @param {Number} The temperature, Kelvin (t)
 @return {Number} P * V = n * r * t
@@ -2059,8 +2166,8 @@ thermal.idealGasPV = function (n, t, callback) {
   return (ans);
 };
 
+// Thermodynamics Work Equation
 /*
-* Thermodynamics Work Equation
 @param {Number} Pressure (p)
 @param {Number} Volume (v)
 @return {Number} W = P * V (Already change in Volume)
@@ -2075,8 +2182,8 @@ thermal.work = function (p, v, callback) {
   return (ans);
 };
 
+// Calculated Thermodynamics Work Equation
 /*
-* Calculated Thermodynamics Work Equation
 @param {Number} Pressure (p)
 @param {Number} Initial Volume (v1)
 @param {Number} Final Volume (v2)
@@ -2092,11 +2199,11 @@ thermal.cWork = function (p, v1, v2, callback) {
   return (ans);
 };
 
+// Heat Relation Equation
 /*
-* Heat Relation Equation
 @param {Number} Work Done (w)
 @param {Number} Internal Energy Change (u)
-@return {Number} Q = U * W
+@return {Number} Q = U + W
 */
 
 thermal.heatChange = function (u, w, callback) {
@@ -2108,12 +2215,12 @@ thermal.heatChange = function (u, w, callback) {
   return (ans);
 };
 
+// Calculated Heat Relation Equation
 /*
-* Calculated Heat Relation Equation
 @param {Number} Work Done (w)
 @param {Number} Initial Energy Change (u1)
 @param {Number} Final Energy Change (u2)
-@return {Number} Q = (Change in) U * W
+@return {Number} Q = (Change in) U + W
 */
 
 thermal.cHeatChange = function (u1, u2, w, callback) {
@@ -2124,7 +2231,7 @@ thermal.cHeatChange = function (u1, u2, w, callback) {
   }
   return (ans);
 };
-},{"./basic":6,"./constants/constants":7,"./constants/multiplier":8,"./constants/units":10}],15:[function(require,module,exports){
+},{"./basic":9,"./constants/constants":10,"./constants/multiplier":11,"./constants/units":12}],18:[function(require,module,exports){
 /**
  * wave.js
  * http://github.com/abhiagarwal/phys.js
@@ -2150,8 +2257,8 @@ var multiplier = require('./constants/multiplier');
 var basic = require('./basic');
 var wave = exports;
 
+// Angular Frequency (w) Function
 /*
-* Angular Frequency (ω) Function
 @param {Number} Time (T)
 @var ans = {Number} ω = 2 pi / T
 */
@@ -2165,8 +2272,9 @@ wave.angularFrequency = function (T, callback) {
   return (ans);
 };
 
+// Displacement (x) of a particle from an arbitrarily 
+// defined equilibrium point at time = t
 /*
-* Displacement (x) of a particle from an arbitrarily defined equilibrium point at time = t
 @param {Number} Amplitude of oscillation (A)
 @param {Number} Angular frequency (ω)
 @param {Number} Time (t)
@@ -2182,8 +2290,9 @@ wave.displacement = function (m, w, t, callback) {
   return (ans);
 };
 
+// Velocity (v) of a particle from an arbitrarily 
+// defined equilibrium point at time = t
 /*
-* Velocity (v) of a particle from an arbitrarily defined equilibrium point at time = t
 @param {Number} Angular frequency (ω)
 @param {Number} Amplitude of oscillation (A)
 @param {Number} Time (t)
@@ -2199,8 +2308,9 @@ wave.velocity = function (w, A, t, callback) {
   return (ans);
 };
 
+// Acceleration (a) of a particle from an arbitrarily 
+// defined equilibrium point at time = t
 /*
-* Acceleration (a) of a particle from an arbitrarily defined equilibrium point at time = t
 @param {Number} Angular frequency (ω)
 @param {Number} Amplitude of oscillation (A)
 @param {Number} Time (t)
@@ -2216,8 +2326,9 @@ wave.acceleration = function (w, A, t, callback) {
   return (ans);
 };
 
+// Kinetic energy (K) of a particle undergoing 
+// simple harmonic motion
 /*
-* Kinetic energy (K) of a particle undergoing simple harmonic motion.
 @param {Number} Mass of particle (m)
 @param {Number} Angular frequency (ω)
 @param {Number} Amplitude of oscillation (A)
@@ -2234,8 +2345,9 @@ wave.kineticEnergy = function (m, w, A, x, callback) {
   return (ans);
 };
 
+// Potential energy (U) of a particle undergoing 
+// simple harmonic motion
 /*
-* Potential energy (U) of a particle undergoing simple harmonic motion.
 @param {Number} Mass of particle (m)
 @param {Number} Angular frequency (ω)
 @param {Number} Displacement from equilibrium point (x)
@@ -2251,8 +2363,8 @@ wave.potentialEnergy = function (m, w, x, callback) {
   return (ans);
 };
 
+// Total energy (E) of a particle undergoing simple harmonic motion
 /*
-* Total energy (E) of a particle undergoing simple harmonic motion.
 @param {Number} Mass of particle (m)
 @param {Number} Angular frequency (ω)
 @param {Number} Amplitude of oscillation (A)
@@ -2268,8 +2380,8 @@ wave.netEnergy = function (m, w, A, callback) {
   return (ans);
 };
 
+// Wave Speed (v) Function
 /*
-* Wave Speed (v) Function
 @param {Number} Frequency (f)
 @param {Number} Wavelength (λ)
 @var ans = {Number} v = f * λ
@@ -2284,8 +2396,8 @@ wave.waveSpeed = function (frequency, wavelength, callback) {
   return (ans);
 };
 
+// Refractive Index of an unknown material
 /*
-* Refractive Index of an unknown material
 @param {Number} Wave speed in known medium (v1)
 @param {Number} Wave speed in unknown medium (v2)
 @param {Number} Refractive Index of known medium (n)
@@ -2301,9 +2413,9 @@ wave.refractiveIndex = function (v1, v2, n1, callback) {
   return (ans);
 };
 
+// Minimum angular resolution (in rads) required to 
+// distinguish two bodies or a measure of image quality
 /*
-* Minimum angular resolution (in rads) required to distinguish two bodies 
-* or a measure of image quality
 *
 @param {Number} Wavelength (λ) of incident light
 @param {Number} Diameter of aperature (d)
@@ -2319,8 +2431,8 @@ wave.angularResolution = function (wavelength, d, callback) {
   return (ans);
 };
 
+// Acoustic beat frequency of two waves
 /*
-* Acoustic beat frequency of two waves
 @param {Number} Frequency of first wave (f1)
 @param {Number} Frequency of second wave (f2)
 @var ans = {Number} b = |f2 - f1|
@@ -2335,8 +2447,8 @@ wave.beatFrequency = function (f1, f2, callback) {
   return (ans);
 };
 
+// Wavelength of the nth harmonic
 /*
-* Wavelength of the nth harmonic
 @param {Number} Length of string (L)
 @param {Numberr} Nth harmonic (n)
 @var ans = {Number} λ = 2L / n
@@ -2351,8 +2463,8 @@ wave.harmonicLen = function (L, n, callback) {
   return (ans);
 };
 
+// Frequency of the nth harmonic
 /*
-* Frequency of the nth harmonic
 @param {Number} Wave speed (v)
 @param {Number} Length of string (L)
 @param {Numberr} Nth harmonic (n)
@@ -2367,5 +2479,5 @@ wave.harmonicFreq = function (v, L, n, callback) {
   }
   return (ans);
 };
-},{"./basic":6,"./constants/constants":7,"./constants/multiplier":8,"./constants/units":10}]},{},[5])
+},{"./basic":9,"./constants/constants":10,"./constants/multiplier":11,"./constants/units":12}]},{},[8])
 ;
