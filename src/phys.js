@@ -1,4 +1,6 @@
 ;(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+module.exports = require('./lib/phys.js');
+},{"./lib/phys.js":9}],2:[function(require,module,exports){
 /**
 * about.js
 * http://github.com/abhiagarwal/phys.js
@@ -26,11 +28,11 @@ about.understand = function(){
 			"Equation: The mathematical equation of the Function" 
 	);
 };
-},{}],2:[function(require,module,exports){
-
 },{}],3:[function(require,module,exports){
-module.exports=require(2)
+
 },{}],4:[function(require,module,exports){
+module.exports=require(3)
+},{}],5:[function(require,module,exports){
 /**
 * mechanics.js
 * http://github.com/abhiagarwal/phys.js
@@ -398,9 +400,9 @@ mechanics.cCentripetalTime = function(){
 			"Centripetal Acceleration = (4 * Pi^2 * Radius) / (Time^2)"
 	);
 };
-},{}],5:[function(require,module,exports){
-module.exports=require(2)
 },{}],6:[function(require,module,exports){
+module.exports=require(3)
+},{}],7:[function(require,module,exports){
 /**
 * thermal.js
 * http://github.com/abhiagarwal/phys.js
@@ -551,9 +553,9 @@ thermal.cHeatChange = function(){
 			"Heat = (Final Energy Change - Initial Energy Change) * Work Done"
 	);
 };
-},{}],7:[function(require,module,exports){
-module.exports=require(2)
 },{}],8:[function(require,module,exports){
+module.exports=require(3)
+},{}],9:[function(require,module,exports){
 /**
  * phys.js
  * http://github.com/abhiagarwal/phys.js
@@ -597,7 +599,7 @@ phys.wave = require('./phys/wave');
 phys.fields = require('./phys/fields');
 phys.electromagnetic = require('./phys/electromagnetic');
 phys.quantum = require('./phys/quantum');
-},{"./information/about":1,"./information/electromagnetic":2,"./information/fields":3,"./information/mechanics":4,"./information/quantum":5,"./information/thermal":6,"./information/wave":7,"./phys/basic":9,"./phys/constants/constants":10,"./phys/constants/multiplier":11,"./phys/constants/units":12,"./phys/electromagnetic":13,"./phys/fields":14,"./phys/mechanics":15,"./phys/quantum":16,"./phys/thermal":17,"./phys/wave":18}],9:[function(require,module,exports){
+},{"./information/about":2,"./information/electromagnetic":3,"./information/fields":4,"./information/mechanics":5,"./information/quantum":6,"./information/thermal":7,"./information/wave":8,"./phys/basic":10,"./phys/constants/constants":11,"./phys/constants/multiplier":12,"./phys/constants/units":13,"./phys/electromagnetic":14,"./phys/fields":15,"./phys/mechanics":16,"./phys/quantum":17,"./phys/thermal":18,"./phys/wave":19}],10:[function(require,module,exports){
 /**
  * basic.js
  * http://github.com/abhiagarwal/phys.js
@@ -657,7 +659,7 @@ basic.twosig = function (number, callback) {
 */
 
 basic.toDegrees = function(radians, callback) {
-  var degrees = radians * (180/Math.PI);
+  var degrees = radians * (180 / Math.PI);
   if (typeof (callback) === 'function') {
     callback(degrees);
     return (degrees);
@@ -679,7 +681,7 @@ basic.toRadians = function(degrees, callback) {
   }
   return radians;
 };
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 /**
 * constants.js
 * http://github.com/abhiagarwal/phys.js
@@ -847,7 +849,7 @@ constants.UnifiedAtomicMassKGUnit = "kg";
 */	
 constants.UnifiedAtomicMasseV = 931.5 * multiplier.M;
 constants.UnifiedAtomicMasseVUnit = "eVc^-2";
-},{"./multiplier":11}],11:[function(require,module,exports){
+},{"./multiplier":12}],12:[function(require,module,exports){
 /**
 * multiplier.js
 * http://github.com/abhiagarwal/phys.js
@@ -962,7 +964,7 @@ multiplier.p = Math.pow(10, -12);
 */
 
 multiplier.f = Math.pow(10, -15);
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 /**
 * units.js
 * http://github.com/abhiagarwal/phys.js
@@ -1049,7 +1051,7 @@ units.atmPaUnit = "Pa";
 */
 units.atmHG = 760;
 units.atmHGUnit = "mmHg";
-},{"./multiplier":11}],13:[function(require,module,exports){
+},{"./multiplier":12}],14:[function(require,module,exports){
 /**
  * electromagnetic.js
  * http://github.com/abhiagarwal/phys.js
@@ -1227,7 +1229,7 @@ electromagnetic.coilEmf = function (n, magFlux1, magFlux2, t1, t2) {
   var ans = (-1 * n) * (basic.changein(magFlux1, magFlux2)) / (basic.changein(t1, t2));
   return ans;
 }
-},{"./basic":9,"./constants/constants":10,"./constants/multiplier":11,"./constants/units":12}],14:[function(require,module,exports){
+},{"./basic":10,"./constants/constants":11,"./constants/multiplier":12,"./constants/units":13}],15:[function(require,module,exports){
 /**
  * fields.js
  * http://github.com/abhiagarwal/phys.js
@@ -1510,7 +1512,7 @@ fields.electricPotentialEnergy = function(Q, r, callback) {
   }
   return ans;
 }
-},{"./basic":9,"./constants/constants":10,"./constants/multiplier":11,"./constants/units":12}],15:[function(require,module,exports){
+},{"./basic":10,"./constants/constants":11,"./constants/multiplier":12,"./constants/units":13}],16:[function(require,module,exports){
 /**
  * mechanics.js
  * http://github.com/abhiagarwal/phys.js
@@ -1932,7 +1934,7 @@ mechanics.cCentripetalTime = function (r, t, callback) {
   }
   return (ans);
 };
-},{"./basic":9,"./constants/constants":10,"./constants/multiplier":11,"./constants/units":12}],16:[function(require,module,exports){
+},{"./basic":10,"./constants/constants":11,"./constants/multiplier":12,"./constants/units":13}],17:[function(require,module,exports){
 /**
  * quantum.js
  * http://github.com/abhiagarwal/phys.js
@@ -2057,7 +2059,7 @@ quantum.thresholdFreq = function (W) {
   var ans = W / constant.PlancksConstant;
   return ans;
 };
-},{"./basic":9,"./constants/constants":10,"./constants/multiplier":11,"./constants/units":12}],17:[function(require,module,exports){
+},{"./basic":10,"./constants/constants":11,"./constants/multiplier":12,"./constants/units":13}],18:[function(require,module,exports){
 /**
  * thermal.js
  * http://github.com/abhiagarwal/phys.js
@@ -2231,7 +2233,7 @@ thermal.cHeatChange = function (u1, u2, w, callback) {
   }
   return (ans);
 };
-},{"./basic":9,"./constants/constants":10,"./constants/multiplier":11,"./constants/units":12}],18:[function(require,module,exports){
+},{"./basic":10,"./constants/constants":11,"./constants/multiplier":12,"./constants/units":13}],19:[function(require,module,exports){
 /**
  * wave.js
  * http://github.com/abhiagarwal/phys.js
@@ -2479,5 +2481,5 @@ wave.harmonicFreq = function (v, L, n, callback) {
   }
   return (ans);
 };
-},{"./basic":9,"./constants/constants":10,"./constants/multiplier":11,"./constants/units":12}]},{},[8])
+},{"./basic":10,"./constants/constants":11,"./constants/multiplier":12,"./constants/units":13}]},{},[1])
 ;
