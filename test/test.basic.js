@@ -51,9 +51,17 @@ describe('basic', function () {
   });
   it('toDegrees Function - Test 2', function () {
     assert.equal(22459.94556912827, basic.toDegrees(392));
-    assert.equal(108861.98107485642, basic.toDegrees(1900));
+    assert.equal(108861.98107485642, basic.toDegrees(1900.0000000000002));
   });
 
-  
+  // basic.toRadians
+  it('toRadians Function - Test 1', function () {
+    assert.equal(2, basic.toRadians(114.59155902616465));
+    assert.equal(Math.PI, basic.toRadians(180));
+  });
+  it('toRadians Function - Test 2', function () {
+    assert.equal(392, basic.toRadians(22459.94556912827));
+    assert.equal(1900.0000000000002, basic.toRadians(108861.98107485642));
+  });
 
  });

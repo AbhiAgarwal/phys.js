@@ -2320,7 +2320,7 @@ wave.velocity = function (w, A, t, callback) {
 */
 
 wave.acceleration = function (w, A, t, callback) {
-  var ans = ((-1 * w) ^ 2 * A * Math.sin(w * t));
+  var ans = (Math.pow((-1 * w), 2) * A * Math.sin(w * t));
   if (typeof (callback) === 'function', callback) {
     callback(ans);
     return (ans);
@@ -2339,7 +2339,7 @@ wave.acceleration = function (w, A, t, callback) {
 */
 
 wave.kineticEnergy = function (m, w, A, x, callback) {
-  var ans = (0.5 * m * w ^ 2 * (A ^ 2 - x ^ 2));
+  var ans = (0.5 * m * Math.pow(w, 2) * ((Math.pow(A, 2)) - (Math.pow(x, 2))));
   if (typeof (callback) === 'function', callback) {
     callback(ans);
     return (ans);
@@ -2357,7 +2357,7 @@ wave.kineticEnergy = function (m, w, A, x, callback) {
 */
 
 wave.potentialEnergy = function (m, w, x, callback) {
-  var ans = (0.5 * m * w ^ 2 * x ^ 2);
+  var ans = (0.5 * m * Math.pow(w, 2) * Math.pow(x, 2));
   if (typeof (callback) === 'function', callback) {
     callback(ans);
     return (ans);
@@ -2374,7 +2374,7 @@ wave.potentialEnergy = function (m, w, x, callback) {
 */
 
 wave.netEnergy = function (m, w, A, callback) {
-  var ans = (0.5 * m * w ^ 2 * A ^ 2);
+  var ans = (0.5 * m * Math.pow(w, 2) * Math.pow(A, 2));
   if (typeof (callback) === 'function', callback) {
     callback(ans);
     return (ans);
