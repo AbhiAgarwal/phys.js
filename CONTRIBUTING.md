@@ -1,13 +1,14 @@
 Contributing
 ===
 
-Contributing to Phys.JS is simple and easy. Just be sure to use the our guidelines, and utilize the tools we used to create this library.
+Contributing to Phys.JS is simple and easy. Just be sure to use the guidelines, and utilize the tools we used to create this library.
 
 ##Guidelines
 
 When contributing please make sure you're using our guidelines:
 
 - Semicolons
+- Use already existing functions in basic.js (or add to them)
 - Writing Documentation
 - Writing to our Information section
 - Writing Tests
