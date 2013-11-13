@@ -65,28 +65,28 @@ describe('mechanics', function () {
     assert.equal(-88.29, basic.twosig(mechanics.force(-9)));
   });
 
-  // mechanics.cforce
+  // mechanics.selfForce
   // 2 parameters
   // Test 1: Multiplication of two basic inputs
   it('Calculated Force Function - Test 1', function () {
-    assert.equal(45, basic.twosig(mechanics.cForce(5, 9)));
-    assert.equal(81, basic.twosig(mechanics.cForce(9, 9)));
+    assert.equal(45, basic.twosig(mechanics.selfForce(5, 9)));
+    assert.equal(81, basic.twosig(mechanics.selfForce(9, 9)));
   });
 
-  // mechanics.forceMomentum
+  // mechanics.selfForceMomentum
   // 4 parameters
   // Test 1: Inputting 4 Basic Variables into the Equation
   it('Force Momentum Function - Test 1', function () {
-    assert.equal(1, basic.twosig(mechanics.forceMomentum(1, 2, 3, 4)));
-    assert.equal(62, basic.twosig(mechanics.forceMomentum(959, 1021, 899, 900)));
+    assert.equal(1, basic.twosig(mechanics.selfForceMomentum(1, 2, 3, 4)));
+    assert.equal(62, basic.twosig(mechanics.selfForceMomentum(959, 1021, 899, 900)));
   });
 
-  // mechanics.cforceMomentum
+  // mechanics.forceMomentum
   // 6 parameters
   // Test 1: Inputs 6 basic numbers into the Equation
   it('Calculated Force Momentum Function - Test 1', function () {
-    assert.equal(10, basic.twosig(mechanics.cForceMomentum(1, 2, 3, 4, 5, 6)));
-    assert.equal(280.70, basic.twosig(mechanics.cForceMomentum(291, 300, 400, 920, 1000, 2000)));
+    assert.equal(10, basic.twosig(mechanics.forceMomentum(1, 2, 3, 4, 5, 6)));
+    assert.equal(280.70, basic.twosig(mechanics.forceMomentum(291, 300, 400, 920, 1000, 2000)));
   });
 
   // mechanics.SUVATuta
@@ -171,20 +171,20 @@ describe('mechanics', function () {
     assert.equal(1000, basic.twosig(mechanics.kineticVelocity(10, 20)));
   });
 
-  // mechanics.kineticMomentum
+  // mechanics.selfKineticMomentum
   // 2 parameters
   // Test 1: Inputs 2 basic numbers into the Equation
   it('Kinetic Energy using Momentum', function () {
-    assert.equal(55.56, basic.twosig(mechanics.kineticMomentum(100, 90)));
-    assert.equal(795.67, basic.twosig(mechanics.kineticMomentum(309, 60)));
+    assert.equal(55.56, basic.twosig(mechanics.selfKineticMomentum(100, 90)));
+    assert.equal(795.67, basic.twosig(mechanics.selfKineticMomentum(309, 60)));
   });
 
-  // mechanics.ckineticMomentum
+  // mechanics.kineticMomentum
   // 2 parameters
   // Test 1: Inputs 2 basic numbers into the Equation
   it('Calculated Kinetic Energy using Momentum', function () {
-    assert.equal(450000, basic.twosig(mechanics.cKineticMomentum(100, 90)));
-    assert.equal(2864430, basic.twosig(mechanics.cKineticMomentum(309, 60)));
+    assert.equal(450000, basic.twosig(mechanics.kineticMomentum(100, 90)));
+    assert.equal(2864430, basic.twosig(mechanics.kineticMomentum(309, 60)));
   });
 
   // mechanics.potential
@@ -195,12 +195,12 @@ describe('mechanics', function () {
     assert.equal(38455.20, basic.twosig(mechanics.potential(98, 60, 100)));
   });
 
-  // mechanics.cpotential
+  // mechanics.selfPotential
   // 4 parameters
   // Test 1: Inputs 4 basic numbers into the Equation
   it('Calculated Potential Energy', function () {
-    assert.equal(3139.20, basic.twosig(mechanics.cPotential(32, 9.81, 40, 50)));
-    assert.equal(17640.00, basic.twosig(mechanics.cPotential(98, 9, 20, 40)));
+    assert.equal(3139.20, basic.twosig(mechanics.selfPotential(32, 9.81, 40, 50)));
+    assert.equal(17640.00, basic.twosig(mechanics.selfPotential(98, 9, 20, 40)));
   });
 
   // mechanics.power
@@ -219,12 +219,12 @@ describe('mechanics', function () {
     assert.equal(40, basic.twosig(mechanics.centripetalVelocity(40, 40)));
   });
 
-  // mechanics.centripetalVelocity
+  // mechanics.selfCentripetalVelocity
   // 2 parameters
   // Test 1: Inputs 2 basic numbers into the Equation
   it('Calculated Centripetal Velocity Equation', function () {
-    assert.equal(0.22, basic.twosig(mechanics.cCentripetalVelocity(20, 90)));
-    assert.equal(1, basic.twosig(mechanics.cCentripetalVelocity(40, 40)));
+    assert.equal(0.22, basic.twosig(mechanics.selfCentripetalVelocity(20, 90)));
+    assert.equal(1, basic.twosig(mechanics.selfCentripetalVelocity(40, 40)));
   });
 
   // mechanics.centripetalTime
@@ -235,11 +235,11 @@ describe('mechanics', function () {
     assert.equal(1.51, basic.twosig(mechanics.centripetalTime(92.1, 49)));
   });
 
-  // mechanics.cCentripetalTime
+  // mechanics.selfCentripetalTime
   // 2 parameters
   // Test 1: Inputs 2 basic numbers into the Equation
   it('Calculated Centripetal Time Equation', function () {
-    assert.equal(59.28, basic.twosig(mechanics.cCentripetalTime(0.5, 0.333)));
-    assert.equal(74.20, basic.twosig(mechanics.cCentripetalTime(92.1, 49)));
+    assert.equal(59.28, basic.twosig(mechanics.selfCentripetalTime(0.5, 0.333)));
+    assert.equal(74.20, basic.twosig(mechanics.selfCentripetalTime(92.1, 49)));
   });
 });

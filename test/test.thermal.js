@@ -28,7 +28,7 @@ To run the tests install Mocha - "npm install -g mocha"
 and run "mocha" on the main directory.
 */
 
-describe('thermal', function() {
+describe('Thermal:', function() {
   console.log('Testing Thermal Library');
 
   // thermal.pressure
@@ -39,21 +39,21 @@ describe('thermal', function() {
     assert.equal(0, thermal.pressure(0, 2));
   });
 
-  // thermal.heat
+  // thermal.selfHeat
   // 3 parameters
   // Test 1: Multiplication of the three inputs
   it('Heat Function - Test 1', function(){
-    assert.equal(72, thermal.heat(4, 2, 9));
-    assert.equal(0, thermal.heat(0, 2, 19));
+    assert.equal(72, thermal.selfHeat(4, 2, 9));
+    assert.equal(0, thermal.selfHeat(0, 2, 19));
   });
 
-  // thermal.cHeat
+  // thermal.heat
   // 4 parameters
   // Test 1: Multiplication of the three inputs, 
   // and difference between parameter 3 and 4.
   it('Calculated Heat Function - Test 1', function(){
-    assert.equal(-5130, thermal.cHeat(9, 19, 34, 4));
-    assert.equal(0, thermal.cHeat(0, 2, 19, 25));
+    assert.equal(-5130, thermal.heat(9, 19, 34, 4));
+    assert.equal(0, thermal.heat(0, 2, 19, 25));
   });
 
   // thermal.latentHeat
@@ -73,43 +73,43 @@ describe('thermal', function() {
     assert.equal(0, thermal.idealGasPV(0, 20));
   });
 
-  // thermal.work
+  // thermal.selfWork
   // 2 parameters
   // Test 1: Multiplication of the two inputs:
   it('Work Equation - Test 1', function(){
   	// Checking for accuracy as well.
-    assert.equal(784.6800000000001, thermal.work(39, 20.12));
-    assert.equal(9150911.4021, thermal.work(30291.001, 302.10));
-    assert.equal(0, thermal.work(0, 209));
+    assert.equal(784.6800000000001, thermal.selfWork(39, 20.12));
+    assert.equal(9150911.4021, thermal.selfWork(30291.001, 302.10));
+    assert.equal(0, thermal.selfWork(0, 209));
   });
 
-  // thermal.cWork
+  // thermal.work
   // 3 parameters
   // Test 1: Multiplication of the two inputs,
   // and the difference of parameters 2 and 3:
   it('Calculated Work Equation - Test 1', function(){
-    assert.equal(780, thermal.cWork(3.9, 192, 392));
-    assert.equal(401.8, thermal.cWork(2.0, 2.10, 203));
-    assert.equal(0, thermal.cWork(0, 0, 0));
+    assert.equal(780, thermal.work(3.9, 192, 392));
+    assert.equal(401.8, thermal.work(2.0, 2.10, 203));
+    assert.equal(0, thermal.work(0, 0, 0));
   });
 
-  // thermal.heatChange
+  // thermal.selfHeatChange
   // 2 parameters
   // Test 1: Multiplication of the two inputs:
   it('Heat Relation Equation - Test 1', function(){
-    assert.equal(29.8, thermal.heatChange(9.8, 20));
-    assert.equal(-50, thermal.heatChange(-30, -20));
-    assert.equal(0, thermal.heatChange(0, 0, 0));
+    assert.equal(29.8, thermal.selfHeatChange(9.8, 20));
+    assert.equal(-50, thermal.selfHeatChange(-30, -20));
+    assert.equal(0, thermal.selfHeatChange(0, 0, 0));
   });
 
-  // thermal.cHeatChange
+  // thermal.heatChange
   // 3 parameters
   // Test 1: Multiplication of the two inputs,
   // and the difference of parameters 2 and 3:
   it('Calculated Heat Relation Equation - Test 1', function(){
-    assert.equal(62.8, thermal.cHeatChange(19.2, 32, 50));
-    assert.equal(11, thermal.cHeatChange(30, 91, -50));
-    assert.equal(-40, thermal.cHeatChange(-30, -30, -40));
+    assert.equal(62.8, thermal.heatChange(19.2, 32, 50));
+    assert.equal(11, thermal.heatChange(30, 91, -50));
+    assert.equal(-40, thermal.heatChange(-30, -30, -40));
   });
 
 });
