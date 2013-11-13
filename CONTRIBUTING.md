@@ -16,7 +16,7 @@ Please read some of our code before hand to get a feel for the syntax we use.
 
 ##Physics
 
-You don't have to be extremely qualified in Physics to contribute to our Library, nor even a Ph.d or Masters student in Physics (we aren't either!). But you just have to be passionate about Physics and have a general understanding of the formulas you're contributing to this library.
+You don't have to be extremely qualified in Physics to contribute to our library, nor even a Ph.D or Masters student in Physics (we aren't either!). But you just have to be passionate about Physics and have a general understanding of the formulas you're contributing to this library.
 
 ##Tools
 
