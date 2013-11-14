@@ -71,6 +71,15 @@ Test for the different functions in the Phys Library. To run the tests install M
 
 It will automatically test the different sections of the library, and display the results on the Terminal.
 
+##Constants
+
+If you need extra precision in your answers feel free to alter these following files that contain the values for our precision:
+
+- phys/basic.js
+- phys/contants/contants.js
+- phys/constants/multiplier.js
+- phys/constants/units.js
+
 ###Core Team
 
 * Abhi Agarwal - [@abhiagarwal](http://twitter.com/abhiagarwal)

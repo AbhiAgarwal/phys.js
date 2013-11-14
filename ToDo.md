@@ -12,7 +12,7 @@ Version 0.0.1
     - ~~Fields, Forces and Motions in Fields~~
     - ~~Energy, power, and climate change~~
     - ~~Atomic and Nuclear Physics~~
-    - Quantum Physics
+    - ~~Quantum Physics~~
     - Fix Information
 
 Version 0.0.2
