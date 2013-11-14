@@ -26,11 +26,11 @@ Then you're able to input it into your application directly using:
 
 Now for example, if you want to use the Mechanics library you're able to just call the functions with the input numbers:
 
-    phys.mechanics.forceMomentum(2, 3, 4, 5);
+    phys.mechanics.momentum(2, 3);
 
-If you're unsure of what the forceMomentum function does, you're able to use a tool built into the library that will allow you understand the function before using it:
+If you're unsure of what the momentum() function does, you're able to use a tool built into the library that will allow you understand the function before using it:
 
-    var output = phys.information.mechanics.forceMomentum();
+    var output = phys.information.mechanics.momentum();
     console.log(output);
 
 Calling this will give you access to information of the parameters, and inputs required for the specific function. (This could be used in conjunction with the docs as well.)
@@ -43,9 +43,9 @@ The output would be in this format:
 
 For example:
 
-    The Force Equation - using Momentum
-    Inputs are: Initial Momentum, Final Momentum, Initial Time, Final Time.
-    Force = (Final Momentum - Initial Momentum) / (Final Time - Initial Time)
+    The Momentum Function
+    Inputs are: Mass & Velocity.
+    Momentum = Mass * Velocity.
 
 You'll know the inputs you've to put in very quickly, as well as what the operations being performed behind the scenes.
 
@@ -57,7 +57,7 @@ To get the dependencies for our project run:
 
     npm install
 
-To generate the Javascript file in /src/ run:
+To generate the Javascript file into the /src/ run:
 
     make build
 
