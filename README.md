@@ -82,6 +82,12 @@ Test for the different functions in the Phys Library. To run the tests install M
 
 It will automatically test the different sections of the library, and display the results on the Terminal.
 
+##Docs
+
+If you want to make the docs then run:
+
+    make docs
+
 ##Constants
 
 If you need extra precision in your answers feel free to alter these following files that contain the values for our precision:

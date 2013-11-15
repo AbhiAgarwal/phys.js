@@ -52,3 +52,9 @@ Here are some tools we use while development Phys.JS:
 - Mocha
 - Browserify
 - Uglifyjs
+
+##Generating for the Browser
+
+Add this to `index.js` if you want to generate the docs for the browser:
+
+    window.phys = require('./lib/phys.js');

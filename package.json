@@ -21,7 +21,11 @@
     "mechanics",
     "suvat",
     "quantum",
-    "thermal"
+    "thermal",
+    "electromagnetic",
+    "fields",
+    "wave",
+    "mathematics"
   ],
   "devDependencies": {
     "mocha": "~1.14.0",
@@ -31,6 +35,7 @@
   },
   "scripts": {
     "test": "make test",
-    "build": "make build"
+    "build": "make build",
+    "docs": "make docs"
   }
 }

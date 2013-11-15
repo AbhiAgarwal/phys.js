@@ -5,15 +5,15 @@ Version 0.0.1
 
 - Finish the following libraries with tests:
 
-    - ~~Mechanics (24 Functions)~~
-    - ~~Thermal Physics (9 Functions)~~
+    - ~~Mechanics)~~
+    - ~~Thermal Physics~~
     - ~~Oscillations and Wave Theory~~
     - ~~Electric Current and Electromagnetic Induction~~
     - ~~Fields, Forces and Motions in Fields~~
     - ~~Energy, power, and climate change~~
     - ~~Atomic and Nuclear Physics~~
     - ~~Quantum Physics~~
-    - Fix Information
+    - ~~Fix Information~~
 
 Version 0.0.2
 
