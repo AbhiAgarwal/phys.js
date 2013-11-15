@@ -6,3 +6,4 @@ build:
 	uglifyjs -o ./src/phys.min.js ./src/phys.js
 docs:
 	docco lib/*.js lib/phys/*.js
+	docco examples/*.js
