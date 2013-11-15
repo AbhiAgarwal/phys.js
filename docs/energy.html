@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>energy.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="phys.html">
+                phys.js
+              </a>
+            
+              
+              <a class="source" href="basic.html">
+                basic.js
+              </a>
+            
+              
+              <a class="source" href="electromagnetic.html">
+                electromagnetic.js
+              </a>
+            
+              
+              <a class="source" href="energy.html">
+                energy.js
+              </a>
+            
+              
+              <a class="source" href="fields.html">
+                fields.js
+              </a>
+            
+              
+              <a class="source" href="mechanics.html">
+                mechanics.js
+              </a>
+            
+              
+              <a class="source" href="quantum.html">
+                quantum.js
+              </a>
+            
+              
+              <a class="source" href="thermal.html">
+                thermal.js
+              </a>
+            
+              
+              <a class="source" href="wave.html">
+                wave.js
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>energy.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/**
+ * energy.js
+ * http://github.com/abhiagarwal/phys.js
+ *
+ * Copyright 2013 Abhi Agarwal
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * (2 functions)
+ */</span>
+
+<span class="keyword">var</span> constant = require(<span class="string">'./constants/constants'</span>);
+<span class="keyword">var</span> units = require(<span class="string">'./constants/units'</span>);
+<span class="keyword">var</span> multiplier = require(<span class="string">'./constants/multiplier'</span>);
+<span class="keyword">var</span> basic = require(<span class="string">'./basic'</span>);
+<span class="keyword">var</span> energy = exports;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Calculated Power</p>
+<p>electromagnetic.power(Area, Density, Velocity)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Area (of wind turbine blindes)
+@param {Number} p - density of air or 1.255 kg/m cubed
+@param {Number} v - wind speed in m/s
+@return {Number} power = 1/2 * (A * p * v^3)
+*/</span>
+
+electromagnetic.power = <span class="function"><span class="keyword">function</span> <span class="params">(A, p, v)</span> {</span>
+  <span class="keyword">var</span> ans = (<span class="number">1</span>/<span class="number">2</span>) * (A * p * Math.pow(v, <span class="number">3</span>));
+  <span class="keyword">return</span> ans;
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Power</p>
+<p>electromagnetic.selfPower(Area, Density, Velocity^3)</p>
+<p>Inputting the Velocity^3 Yourself</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Area (of wind turbine blindes)
+@param {Number} p - density of air or 1.255 kg/m cubed
+@param {Number} v - wind speed in m/s
+@return {Number} power = 1/2 * (A * p * v^3)
+*/</span>
+
+electromagnetic.selfPower = <span class="function"><span class="keyword">function</span> <span class="params">(A, p, v)</span> {</span>
+  <span class="keyword">var</span> ans = (<span class="number">1</span>/<span class="number">2</span>) * (A * p * v);
+  <span class="keyword">return</span> ans;
+};</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
