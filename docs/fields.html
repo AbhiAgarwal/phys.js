@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>fields.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>fields.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/**
+ * fields.js
+ * http://github.com/abhiagarwal/phys.js
+ *
+ * Copyright 2013 Abhi Agarwal
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * (15 functions)
+ */</span>
+
+<span class="keyword">var</span> constant = require(<span class="string">'./constants/constants'</span>);
+<span class="keyword">var</span> units = require(<span class="string">'./constants/units'</span>);
+<span class="keyword">var</span> multiplier = require(<span class="string">'./constants/multiplier'</span>);
+<span class="keyword">var</span> basic = require(<span class="string">'./basic'</span>);
+<span class="keyword">var</span> fields = exports;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Gravitational Force</p>
+<p>fields.gravitationalForce(massOne, massTwo, radius)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Mass of First Object (mone)
+@param {Number} Mass of Second Object (mtwo)
+@param {Number} radius (r)
+@return {Number} Force = G * ((mone * mtwo) / r^2)
+*/</span>
+
+fields.gravitationalForce = <span class="function"><span class="keyword">function</span> <span class="params">(mone, mtwo, r, callback)</span> {</span>
+  <span class="keyword">var</span> ans = (constant.GravitationalConstant * ((mone * mtwo) / (Math.pow(
+    r, <span class="number">2</span>))));
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(ans);
+    <span class="keyword">return</span> (ans);
+  }
+  <span class="keyword">return</span> (ans);
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Calculated Gravitational Force</p>
+<p>fields.selfGravitationalForce(massOne, massTwo, radius, gravConst)</p>
+<p>Inputting Gravitation Constant Yourself</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Mass One (mone)
+@param {Number} Mass Two (mtwo)
+@param {Number} radius^2 (r^2)
+@param {Number} Gravitation Constant (g), self input
+@return {Number} Force = G * ((mone * mtwo) / r^2)
+*/</span>
+
+fields.selfGravitationalForce = <span class="function"><span class="keyword">function</span> <span class="params">(mone, mtwo, r, g, callback)</span> {</span>
+  <span class="keyword">var</span> ans = (g * ((mone * mtwo) / r));
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(ans);
+    <span class="keyword">return</span> (ans);
+  }
+  <span class="keyword">return</span> (ans);
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Coulomb&#39;s Law</p>
+<p>coulombForce(chargeOne, chargeTwo, radius)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Charge of First Object (qone)
+@param {Number} Charge of Second Object (qtwo)
+@param {Number} radius (r)
+@return {Number} Force = k * ((qone * qtwo) / r^2)
+*/</span>
+
+fields.coulombForce = <span class="function"><span class="keyword">function</span> <span class="params">(qone, qtwo, r, callback)</span> {</span>
+  <span class="keyword">var</span> ans = (constant.CoulombConstant * ((qone * qtwo) / Math.pow(r,
+    <span class="number">2</span>)));
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(ans);
+    <span class="keyword">return</span> (ans);
+  }
+  <span class="keyword">return</span> (ans);
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Calculated Coulomb&#39;s Law</p>
+<p>selfCoulombForce(chargeOne, chargeTwo, radius, CoulombConst)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Charge of First Object (qone)
+@param {Number} Charge of Second Object (qtwo)
+@param {Number} radius^2 (r^2)
+@param {Number} Coulomb constant (k)
+@return {Number} Force = k * ((qone * qtwo) / r^2)
+*/</span>
+
+fields.selfCoulombForce = <span class="function"><span class="keyword">function</span> <span class="params">(qone, qtwo, r, k, callback)</span> {</span>
+  <span class="keyword">var</span> ans = (k * ((qone * qtwo) / r));
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(ans);
+    <span class="keyword">return</span> (ans);
+  }
+  <span class="keyword">return</span> (ans);
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Acceleration (Gravity)</p>
+<p>fields.gravitationalAcceleration(Force, Mass)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Force (F)
+@param {Number} Mass (m)
+@return {Number} Acceleration = F / m
+*/</span>
+
+fields.gravitationalAcceleration = <span class="function"><span class="keyword">function</span> <span class="params">(F, m, callback)</span> {</span>
+  <span class="keyword">var</span> ans = (F / m);
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(ans);
+    <span class="keyword">return</span> (ans);
+  }
+  <span class="keyword">return</span> (ans);
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Electric Field</p>
+<p>fields.electricField(Force, Charge)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Force (F)
+@param {Number} Charge (q)
+@return {Number} Electric Field = F / q
+*/</span>
+
+fields.electricField = <span class="function"><span class="keyword">function</span> <span class="params">(F, q, callback)</span> {</span>
+  <span class="keyword">var</span> ans = (F / q);
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(ans);
+    <span class="keyword">return</span> (ans);
+  }
+  <span class="keyword">return</span> (ans);
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>Electric Field from change in Electric potential energy V with respect to position</p>
+<p>fields.gradElectricField(Electric Potential v1, v2, Position x1, x2)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Electric potential energy (v1, v2)
+@param {Number} Position (x1, x2)
+@return {Number} Electric Field Strength E = - (v2 - v1) / (x2 - x1)
+*/</span>
+
+fields.gradElectricField = <span class="function"><span class="keyword">function</span> <span class="params">(v1, v2, x1, x2, callback)</span> {</span>
+  <span class="keyword">var</span> ans = (-<span class="number">1</span> * basic.changein(v1, v2)) / (basic.changein(x1, x2));
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(ans);
+    <span class="keyword">return</span> (ans);
+  }
+  <span class="keyword">return</span> (ans);
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>Gravitational Field from change in Gravitational potential energy V with respect to position</p>
+<p>fields.gradGravField(Gravitational potential v1, v2, Position x1, x2)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Gravitational potential energy (v1, v2)
+@param {Number} Position (x1, x2)
+@return {Number} Gravitational Field Strength g = - (u2 - u1) / (x2 - x1)
+*/</span>
+
+fields.gradGravField = <span class="function"><span class="keyword">function</span> <span class="params">(u1, u2, x1, x2, callback)</span> {</span>
+  <span class="keyword">var</span> ans = (-<span class="number">1</span> * basic.changein(u1, u2)) / (basic.changein(x1, x2));
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(ans);
+    <span class="keyword">return</span> (ans);
+  }
+  <span class="keyword">return</span> (ans);
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>Magnetic force F exerted on a particle passing through B-field</p>
+<p>fields.particleMagneticForce(Charge, Velocity, B-field strength, Angle)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Charge (q)
+@param {Number} Velocity (v)
+@param {Number} B-field strength (B)
+@param {Number} Angle (in degrees) between B-field and path of particle (theta)
+@return {Number} Force F = q * v * B * sin(theta)
+*/</span>
+
+fields.particleMagneticForce = <span class="function"><span class="keyword">function</span><span class="params">(q, v, B, theta, callback)</span> {</span>
+  <span class="keyword">var</span> ans = (q * v * B) * Math.sin(basic.toRadians(theta));
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(ans);
+    <span class="keyword">return</span> (ans);
+  }
+  <span class="keyword">return</span> (ans);
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <p>Magnetic force F exerted on a current-carrying conductor in a B-field</p>
+<p>fields.conductorMagneticForce(B-field strength, Current, Length, Angle)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} B-field strength (B)
+@param {Number} Current (I)
+@param {Number} Length (l)
+@param {Number} Angle (in degrees) between B-field and path of particle (theta)
+@return {Number} Force F = B * I * L * sin(theta)
+*/</span>
+
+fields.conductorMagneticForce = <span class="function"><span class="keyword">function</span><span class="params">(B, I, l, theta, callback)</span> {</span>
+  <span class="keyword">var</span> ans = (B * I * l) * Math.sin(basic.toRadians(theta, callback));
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(ans);
+    <span class="keyword">return</span> (ans);
+  }
+  <span class="keyword">return</span> (ans);
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <p>Gravitational potential energy of a particle m in a gravitatonal field formed by a body of mass M</p>
+<p>fields.particleGravitationalPotentialEnergy(Particle mass, Source mass, Seperation from source mass)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Particle mass (m)
+@param {Number} Source mass (M)
+@param {Number} Seperation from source mass (r)
+@return {Number} U = -G * (m * M / r)
+*/</span>
+
+fields.particleGravitationalPotentialEnergy = <span class="function"><span class="keyword">function</span><span class="params">(m, M, r, callback)</span> {</span>
+  <span class="keyword">var</span> ans = (-<span class="number">1</span> * constant.GravitationalConstant) * (m * M / r);
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(ans);
+    <span class="keyword">return</span> (ans);
+  }
+  <span class="keyword">return</span> (ans);
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <p>Gravitational potential energy of a particle m in a gravitatonal field formed by a body of mass M</p>
+<p>fields.selfparticleGravitationalPotentialEnergy(Particle mass, Source mass, Seperation from source mass, Gravitational Constant)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Particle mass (m)
+@param {Number} Source mass (M)
+@param {Number} Seperation from source mass (r)
+@param {Number} Gravitational Constant (g)
+@return {Number} U = -g * (m * M / r)
+*/</span>
+
+fields.selfparticleGravitationalPotentialEnergy = <span class="function"><span class="keyword">function</span><span class="params">(m, M, r, g, callback)</span> {</span>
+  <span class="keyword">var</span> ans = (-<span class="number">1</span> * g) * (m * M / r);
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(ans);
+    <span class="keyword">return</span> (ans);
+  }
+  <span class="keyword">return</span> (ans);
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <p>Gravitational potential energy of an arbitrary pont in a gravitatonal field formed by a body of mass M</p>
+<p>fields.gravitationalPotentialEnergy(Mass, Seperation from source mass)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Source mass (M)
+@param {Number} Seperation from source mass (r)
+@return {Number} U = -G * (M / r)
+*/</span>
+
+fields.gravitationalPotentialEnergy = <span class="function"><span class="keyword">function</span><span class="params">(M, r, callback)</span> {</span>
+  <span class="keyword">var</span> ans = (-<span class="number">1</span> * constant.GravitationalConstant) * (M / r);
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(ans);
+    <span class="keyword">return</span> (ans);
+  }
+  <span class="keyword">return</span> (ans);
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <p>Velocity required for a body of to escape the orbit of a planet of mass M</p>
+<p>fields.escapeVelocity(Mass M of planet, Radius r of planet)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Mass M of planet
+@param {Number} Radius r of planet
+@return {Number} v = sqrt(2G (M / r))
+*/</span>
+
+fields.escapeVelocity = <span class="function"><span class="keyword">function</span><span class="params">(M, r, callback)</span> {</span>
+  <span class="keyword">var</span> ans = Math.sqrt((<span class="number">2</span> * constant.GravitationalConstant) * (M / r));
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(ans);
+    <span class="keyword">return</span> (ans);
+  }
+  <span class="keyword">return</span> ans;
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-16">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-16">&#182;</a>
+              </div>
+              <p>Electric potential of a test charge q in an electric field formed by a charge Q at a distance r</p>
+<p>fields.chargeElectricPotentialEnergy(Source charge, Test charge, Seperation)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Test charge (q)
+@param {Number} Source charge (Q)
+@param {Number} Separation (r)
+@return {Number} U = (k * Q * q) / r
+*/</span>
+
+fields.chargeElectricPotentialEnergy = <span class="function"><span class="keyword">function</span><span class="params">(Q, q, r, callback)</span> {</span>
+  <span class="keyword">var</span> ans = basic.CoulombConstant * (Q * q / r);
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(ans);
+    <span class="keyword">return</span> (ans);
+  }
+  <span class="keyword">return</span> ans;
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-17">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-17">&#182;</a>
+              </div>
+              <p>Electric potential of an arbitrary point in an electric field formed by a charge Q at a distance r</p>
+<p>fields.electricPotentialEnergy(Source charge, Separation)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*
+@param {Number} Source charge (Q)
+@param {Number} Separation (r)
+@return {Number} U = (k * Q) / r
+*/</span>
+
+fields.electricPotentialEnergy = <span class="function"><span class="keyword">function</span><span class="params">(Q, r, callback)</span> {</span>
+  <span class="keyword">var</span> ans = basic.CoulombConstant * (Q / r);
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> (callback) === <span class="string">'function'</span>) {
+    callback(ans);
+    <span class="keyword">return</span> (ans);
+  }
+  <span class="keyword">return</span> ans;
+}</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

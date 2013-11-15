@@ -1,4 +1,4 @@
-phys.js
+(phys.js)[http://www.physjs.org]
 ====
 
 Phys is a library created for individuals who want to use simple or advanced physics functions in their day-to-day work. This library includes functions for:
