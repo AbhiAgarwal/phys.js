@@ -51,6 +51,17 @@ You'll know the inputs you've to put in very quickly, as well as what the operat
 
 This is to allow individuals to build applications that aren't just specific to calculations in Physics, but resources that would let other individuals understand Physics.
 
+##Using in Browser
+
+Importing this into your HTML file:
+
+    <script src="phys.js"></script>
+    <script src="phys.min.js"></script>
+
+Then to get values you can do:
+
+    console.log(phys.basic.changein(2, 3));
+
 ###Build
 
 To get the dependencies for our project run:
