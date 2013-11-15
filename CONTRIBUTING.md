@@ -30,7 +30,20 @@ If your ideas don't fit under these categories, then let us know!
     - Atomic and Nuclear Physics
     - Quantum Physics
 
-##Tools
+##Development
+
+Here are a few commands that will help you get started development for our Library:
+
+`make test`
+`make build`
+`make docs`
+
+Using Node.JS you can use the Library and check your development pretty easily:
+
+`node index.js`
+`node lib/phys.js`
+
+###Tools
 
 Here are some tools we use while development Phys.JS:
 
