@@ -30,10 +30,10 @@ Now for example, if you want to use the Mechanics library you're able to just ca
 
 If you're unsure of what the momentum() function does, you're able to use a tool built into the library that will allow you understand the function before using it:
 
-    var output = phys.information.mechanics.momentum();
+    var output = phys.imechanics.momentum();
     console.log(output);
 
-Calling this will give you access to information of the parameters, and inputs required for the specific function. (This could be used in conjunction with the docs as well.)
+Putting an "i" before any library name without parameters will allow you to see the Name, Inputs, and Equation of that particular function.
 
 The output would be in this format:
 
