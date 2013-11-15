@@ -39,12 +39,12 @@ describe('Thermal:', function() {
     assert.equal(0, thermal.pressure(0, 2));
   });
 
-  // thermal.selfHeat
+  // thermal.selfheat
   // 3 parameters
   // Test 1: Multiplication of the three inputs
   it('Heat Function - Test 1', function(){
-    assert.equal(72, thermal.selfHeat(4, 2, 9));
-    assert.equal(0, thermal.selfHeat(0, 2, 19));
+    assert.equal(72, thermal.selfheat(4, 2, 9));
+    assert.equal(0, thermal.selfheat(0, 2, 19));
   });
 
   // thermal.heat
@@ -73,14 +73,14 @@ describe('Thermal:', function() {
     assert.equal(0, thermal.idealGasPV(0, 20));
   });
 
-  // thermal.selfWork
+  // thermal.selfwork
   // 2 parameters
   // Test 1: Multiplication of the two inputs:
   it('Work Equation - Test 1', function(){
   	// Checking for accuracy as well.
-    assert.equal(784.6800000000001, thermal.selfWork(39, 20.12));
-    assert.equal(9150911.4021, thermal.selfWork(30291.001, 302.10));
-    assert.equal(0, thermal.selfWork(0, 209));
+    assert.equal(784.6800000000001, thermal.selfwork(39, 20.12));
+    assert.equal(9150911.4021, thermal.selfwork(30291.001, 302.10));
+    assert.equal(0, thermal.selfwork(0, 209));
   });
 
   // thermal.work
@@ -93,13 +93,13 @@ describe('Thermal:', function() {
     assert.equal(0, thermal.work(0, 0, 0));
   });
 
-  // thermal.selfHeatChange
+  // thermal.selfheatChange
   // 2 parameters
   // Test 1: Multiplication of the two inputs:
   it('Heat Relation Equation - Test 1', function(){
-    assert.equal(29.8, thermal.selfHeatChange(9.8, 20));
-    assert.equal(-50, thermal.selfHeatChange(-30, -20));
-    assert.equal(0, thermal.selfHeatChange(0, 0, 0));
+    assert.equal(29.8, thermal.selfheatChange(9.8, 20));
+    assert.equal(-50, thermal.selfheatChange(-30, -20));
+    assert.equal(0, thermal.selfheatChange(0, 0, 0));
   });
 
   // thermal.heatChange

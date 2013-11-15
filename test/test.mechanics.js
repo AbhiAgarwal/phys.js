@@ -130,13 +130,13 @@ describe('mechanics', function () {
     assert.equal(178385.04, basic.twosig(mechanics.SUVATuas(0, 9.81, 9092)));
   });
 
-  // mechanics.cSUVATuas
+  // mechanics.selfSUVATuas
   // 3 parameters
   // Test 1: Inputs 3 basic numbers into the Equation
   // Returns v
   it('Calculated SUVAT Velocity Equation 2', function () {
-    assert.equal(basic.twosig(Math.sqrt(3924)), basic.twosig(mechanics.cSUVATuas(0, 9.81, 200)));
-    assert.equal(basic.twosig(Math.sqrt(178385.04)), basic.twosig(mechanics.cSUVATuas(0, 9.81, 9092)));
+    assert.equal(basic.twosig(Math.sqrt(3924)), basic.twosig(mechanics.selfSUVATuas(0, 9.81, 200)));
+    assert.equal(basic.twosig(Math.sqrt(178385.04)), basic.twosig(mechanics.selfSUVATuas(0, 9.81, 9092)));
   });
 
   // mechanics.impulseMass
