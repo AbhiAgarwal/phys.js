@@ -957,16 +957,6 @@ phys.constants = require('./phys/constants/constants');
 phys.multiplier = require('./phys/constants/multiplier');
 phys.units = require('./phys/constants/units');
 
-// Information Library
-phys.information = require('./information/basic');
-phys.information.mechanics = require('./information/mechanics');
-phys.information.thermal = require('./information/thermal');
-phys.information.wave = require('./information/wave');
-phys.information.energy = require('./information/energy');
-phys.information.fields = require('./information/fields');
-phys.information.electromagnetic = require('./information/electromagnetic');
-phys.information.quantum = require('./information/quantum');
-
 // Pure Formulas
 phys.basic = require('./phys/basic');
 phys.mechanics = require('./phys/mechanics');
@@ -976,6 +966,16 @@ phys.wave = require('./phys/wave');
 phys.fields = require('./phys/fields');
 phys.electromagnetic = require('./phys/electromagnetic');
 phys.quantum = require('./phys/quantum');
+
+// Information Library
+phys.information = require('./information/basic');
+phys.information.mechanics = require('./information/mechanics');
+phys.information.thermal = require('./information/thermal');
+phys.information.wave = require('./information/wave');
+phys.information.energy = require('./information/energy');
+phys.information.fields = require('./information/fields');
+phys.information.electromagnetic = require('./information/electromagnetic');
+phys.information.quantum = require('./information/quantum');
 },{"./information/basic":1,"./information/electromagnetic":2,"./information/energy":3,"./information/fields":4,"./information/mechanics":5,"./information/quantum":6,"./information/thermal":7,"./information/wave":8,"./phys/basic":10,"./phys/constants/constants":11,"./phys/constants/multiplier":12,"./phys/constants/units":13,"./phys/electromagnetic":14,"./phys/fields":15,"./phys/mechanics":16,"./phys/quantum":17,"./phys/thermal":18,"./phys/wave":19}],10:[function(require,module,exports){
 /**
  * basic.js
