@@ -2,11 +2,11 @@
   "author": "Abhi Agarwal <me@abhiagarwal.com> (https://github.com/abhiagarwal)",
   "name": "phys",
   "description": "Physics Library designed for Javascript",
-  "version": "0.0.1",
-  "homepage": "https://github.com/AbhiAgarwal/Phys",
+  "version": "0.0.5",
+  "homepage": "https://github.com/AbhiAgarwal/phys.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/abhiagarwal/phys"
+    "url": "git://github.com/abhiagarwal/phys.js"
   },
   "contributors": [
     "Philip Ottesen (https://github.com/pjo256)"
