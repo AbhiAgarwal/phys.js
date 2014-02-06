@@ -2,7 +2,7 @@
   "author": "Abhi Agarwal <me@abhiagarwal.com> (https://github.com/abhiagarwal)",
   "name": "phys",
   "description": "Physics Library designed for Javascript",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "homepage": "https://github.com/AbhiAgarwal/phys.js",
   "repository": {
     "type": "git",
