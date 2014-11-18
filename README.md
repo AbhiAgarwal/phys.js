@@ -1,4 +1,4 @@
-[phys.js](http://www.physjs.org)
+[phys.js](http://physjs.com/)
 ====
 
 Phys is a library created for individuals who want to use simple or advanced physics functions in their day-to-day work. This library includes functions for:
@@ -14,7 +14,7 @@ Phys is a library created for individuals who want to use simple or advanced phy
 
 The APIs will allow you to understand the usage of each function, while also being able to access each constant and each function defined in the library, and apply them in your work.
 
-###[Uses](http://www.physjs.org/docs/index.html)
+###[Uses](http://www.physjs.com/docs/index.html)
 
 Phys is a module in node so it's pretty simple to integrate and start using with your current application. With node you're able to install the library as follows:
 
