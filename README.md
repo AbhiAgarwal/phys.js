@@ -16,7 +16,7 @@ Phys is a library created for individuals who want to use simple or advanced phy
 
 The APIs will allow you to understand the usage of each function, while also being able to access each constant and each function defined in the library, and apply them in your work.
 
-###[Uses](http://www.physjs.com/docs/index.html)
+### [Uses](http://www.physjs.com/docs/index.html)
 
 Phys is a module in node so it's pretty simple to integrate and start using with your current application. With node you're able to install the library as follows:
 
@@ -53,7 +53,7 @@ You'll know the inputs you've to put in very quickly, as well as what the operat
 
 This is to allow individuals to build applications that aren't just specific to calculations in Physics, but resources that would let other individuals understand Physics.
 
-##Using in Browser
+## Using in Browser
 
 Importing this into your HTML file:
 
@@ -64,7 +64,7 @@ Then to get values you can do:
 
     console.log(phys.basic.changein(2, 3));
 
-###Build
+### Build
 
 To get the dependencies for our project run:
 
@@ -76,7 +76,7 @@ To generate the Javascript file into the /src/ run:
 
 It will compile and generate the Javascript code in: /src/phys.js & the minified file in /src/phys.min.js.
 
-###Tests
+### Tests
 
 Test for the different functions in the Phys Library. To run the tests install Mocha, and then run:
 
@@ -84,13 +84,13 @@ Test for the different functions in the Phys Library. To run the tests install M
 
 It will automatically test the different sections of the library, and display the results on the Terminal.
 
-##Docs
+## Docs
 
 If you want to make the docs then run:
 
     make docs
 
-##Constants
+## Constants
 
 If you need extra precision in your answers feel free to alter these following files that contain the values for our precision:
 
@@ -99,7 +99,7 @@ If you need extra precision in your answers feel free to alter these following f
 - phys/constants/multiplier.js
 - phys/constants/units.js
 
-###Core Team
+### Core Team
 
 * Abhi Agarwal - [@abhiagarwal](http://twitter.com/abhiagarwal)
 * Philip Ottesen - [@pjo256](http://github.com/pjo256)
